@@ -84,7 +84,7 @@ export default function ProductInfo({
     <div className="space-y-10">
       {/* CATEGORY */}
       {category && categoryId && (
-        <div className="space-y-2 md:mt-20">
+        <div className="space-y-2 md:mt-20 font-futura">
           <Link
             href={`/products/furniture?category=${categoryId}`}
             className="
@@ -92,8 +92,7 @@ export default function ProductInfo({
               uppercase
               tracking-[0.2em]
               text-gray-400
-              font-serif
-              italic
+
               transition-colors
               hover:text-[#2e2e2e]
               cursor-pointer
@@ -111,11 +110,10 @@ export default function ProductInfo({
         className="
           text-3xl
           md:text-5xl
-          font-serif
-          italic
           tracking-wide
           text-[#2e2e2e]
           leading-tight
+          uppercase
         "
       >
         {name}
@@ -130,8 +128,6 @@ export default function ProductInfo({
             leading-relaxed
             text-[#4a4a4a]
             font-light
-            font-serif
-            italic
           "
         >
           {description}

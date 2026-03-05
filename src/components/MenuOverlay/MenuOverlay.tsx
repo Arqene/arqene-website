@@ -370,7 +370,6 @@ export default function MenuOverlay({ onClose }: MenuOverlayProps) {
                         text-black
                         text-[20px]
                         font-serif
-                        italic
                         tracking-tight
                       `}
                       animate={{ x: isActive ? 12 : 0 }}
@@ -413,10 +412,10 @@ export default function MenuOverlay({ onClose }: MenuOverlayProps) {
                         animate={{ x: isActive ? 10 : 0 }}
                         transition={{ duration: 0.25 }}
                       >
-                        <span className="text-[22px] tracking-tight font-serif italic md:text-[32px] mr-1">
+                        <span className="text-[22px] tracking-tight font-normal md:text-[32px]">
                           {item.label.charAt(0)}
                         </span>
-                        <span className="text-[20px] tracking-tight font-serif italic md:text-[28px]">
+                        <span className="text-[20px] tracking-tight font-normal md:text-[28px]">
                           {item.label.slice(1)}
                         </span>
                       </motion.span>

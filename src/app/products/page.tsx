@@ -28,18 +28,19 @@ async function getHomeImages() {
     })
   );
 
-//   console.log(data);
+  // console.log("Data",data);
   return data;
 }
 
 export default async function ProductsPage() {
   const sections = await getHomeImages();
+  // console.log("section",sections);
 
   return (
     <section className="bg-[#f4f4f2]">
       {/* Page Heading */}
-      <div className="px-6 md:px-16 pt-20 pb-10">
-        <h1 className="text-3xl md:text-4xl font-serif italic tracking-wide text-[#3a3a3a]">
+      <div className="px-6 md:px-16 pt-20 pb-10 font-futura">
+        <h1 className="text-3xl md:text-4xl uppercase tracking-[0.18rem] text-[#3a3a3a]">
           Products
         </h1>
       </div>
@@ -74,7 +75,8 @@ export default async function ProductsPage() {
                     group-hover:scale-[1.08]
                     will-change-transform
                   "
-                >
+                > 
+               
                   <IKImage
                     src={section.coverUrl}
                     alt={section.title}
@@ -100,7 +102,7 @@ export default async function ProductsPage() {
                 className="
                   mt-6
                   text-[22px] md:text-[26px]
-                  font-serif italic tracking-wide
+                  uppercase tracking-wide
                   text-[#3a3a3a]
                   transition-colors duration-300
                    

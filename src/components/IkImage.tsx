@@ -24,7 +24,7 @@ export default function IKImage({ src, alt, priority }: Props) {
       alt={alt}
       fill
       priority={priority}
-      className="object-cover"
+      className="object-cover rounded-md"
       transformation={[
         {
           width: 1600,

@@ -169,8 +169,7 @@ export default function CategoryTabs({ categories }: any) {
               text-sm
               tracking-wide
               uppercase
-              font-serif
-              italic
+              font-futura
               whitespace-nowrap
               transition-colors
               ${

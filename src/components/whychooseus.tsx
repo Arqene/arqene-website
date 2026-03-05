@@ -264,111 +264,278 @@
 //     </section>
 //   );
 // }
+
+// "use client";
+
+// const FEATURES = [
+//   {
+//     id: "technical-excellence",
+//     title: "Technical Virtuosity, Proven",
+//     description:
+//       "Former PMCs and seasoned specialists lead every installation. Complications anticipated. Challenges resolved. Your project. Their vigilance. Period.",
+//     icon: "/icons/technical.svg",
+//   },
+//   {
+//     id: "the-design-maestros",
+//     title: "The Design Maestros",
+//     description:
+//       "Before a single cut, we dissect—MEPs, RCPs, structure. Every specification carried through—shop drawings engineered from the first line.",
+//     icon: "/icons/design.svg",
+//   },
+//   {
+//     id: "with-master-architects",
+//     title: "With Master Architects",
+//     description:
+//       "Decades with the finest on prestige commissions. Trust built quietly, one partnership at a time.",
+//     icon: "/icons/architects.svg",
+//   },
+//   {
+//     id: "exactitude",
+//     title: "Exactitude",
+//     description:
+//       "Engineered to the tenth of a millimeter. Your drawings, our mandate.",
+//     icon: "/icons/exactitude.svg",
+//   },
+//   {
+//     id: "time-as-craft",
+//     title: "Time as Craft",
+//     description:
+//       "Your reputation rests on delivery. So does ours. No extensions. No excuses. Just meticulous planning.",
+//     icon: "/icons/time.svg",
+//   },
+//   {
+//     id: "material-mastery",
+//     title: "Material Mastery",
+//     description:
+//       "Rare woods. Museum-grade finishes. Materials that manifest the perspective. Surfaces, lived with.",
+//     icon: "/icons/material.svg",
+//   },
+//   {
+//     id: "bespoke",
+//     title: "Bespoke",
+//     description:
+//       "Bespoke means bespoke. No templates. No limits. You choose. We take care of the rest.",
+//     icon: "/icons/bespoke.svg",
+//   },
+// ];
+
+// export default function WhyArchitectsChooseUs() {
+//   return (
+//     <section className="w-full bg-[#f4f4f5] py-14 lg:py-18">
+//       <div className="mx-auto max-w-6xl lg:max-w-7xl xl:max-w-[90rem] px-6 lg:px-10">
+//         {/* Heading */}
+//         <div className="mb-10">
+//           <h2 className="font-serif italic text-xl md:text-2xl lg:text-3xl  uppercase tracking-[0.08em] text-[#2f2a25]">
+//             The{" "}
+//             <span className="text-[#c1171a]">वा</span>
+//             <span className="text-[#2f2a25]">stukar’s Choice</span>
+//           </h2>
+//         </div>
+
+//         {/* Cards */}
+//         <div className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+//           {FEATURES.map((feature) => (
+//             <article key={feature.id} className="h-full">
+//               <div
+//                 className="
+//                   flex h-full flex-col items-center text-center
+//                   lg:items-start lg:text-left
+//                   rounded-2xl border border-[#c3c3c4] bg-[#f4f4f5]
+//                   px-8 py-8 lg:px-10 lg:py-9
+//                   shadow-[0_10px_35px_rgba(21,19,15,0.08)]
+//                   hover:shadow-[0_18px_45px_rgba(21,19,15,0.18)]
+//                   hover:-translate-y-1.5
+//                   transition-transform transition-shadow duration-300
+//                 "
+//               >
+//                 {/* Icon badge with per-card SVG from /public */}
+//                 <div className="mb-6 flex h-16 w-16 lg:h-18 lg:w-18 items-center justify-center rounded-full border border-[#c3c3c4] bg-[#f4f4f5]">
+//                   <img
+//                     src={feature.icon}
+//                     alt=""
+//                     className="h-7 w-7"
+//                   />
+//                 </div>
+
+//                 <h3 className="font-serif text-lg md:text-xl lg:text-[1.3rem] xl:text-xl text-[#3b342c] mb-3">
+//                   {feature.title}
+//                 </h3>
+
+//                 <p className="text-sm md:text-[15px] lg:text-base leading-relaxed text-[#7a7165] max-w-xs lg:max-w-sm">
+//                   {feature.description}
+//                 </p>
+//               </div>
+//             </article>
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
+
+
 "use client";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
 const FEATURES = [
   {
     id: "technical-excellence",
     title: "Technical Virtuosity, Proven",
-    description:
-      "Former PMCs and seasoned specialists lead every installation. Complications anticipated. Challenges resolved. Your project. Their vigilance. Period.",
+    description: `Former PMCs and seasoned specialists lead every installation.
+Complications anticipated. Challenges resolved.
+Your project. Their vigilance. Period.`,
     icon: "/icons/technical.svg",
   },
   {
     id: "the-design-maestros",
-    title: "The Design Maestros",
-    description:
-      "Before a single cut, we dissect—MEPs, RCPs, structure. Every specification carried through—shop drawings engineered from the first line.",
+    title: " The Design Maestros",
+    description: `Before a single cut, we dissect—MEPs, RCPs, structure.
+Every specification carried through—Shop Drawings.
+Engineered from the first line.`,
     icon: "/icons/design.svg",
   },
   {
     id: "with-master-architects",
     title: "With Master Architects",
-    description:
-      "Decades with the finest on prestige commissions. Trust built quietly, one partnership at a time.",
+    description: `Decades with the finest on prestige commissions.\n
+Trust built quietly, one partnership at a time.`,
     icon: "/icons/architects.svg",
   },
   {
     id: "exactitude",
     title: "Exactitude",
-    description:
-      "Engineered to the tenth of a millimeter. Your drawings, our mandate.",
+    description: `Engineered to the tenth of a millimeter.
+Your drawings, our mandate.`,
     icon: "/icons/exactitude.svg",
   },
   {
     id: "time-as-craft",
-    title: "Time as Craft",
-    description:
-      "Your reputation rests on delivery. So does ours. No extensions. No excuses. Just meticulous planning.",
+    title: "Time As Craft",
+    description: `Your reputation rests on delivery. So does ours.
+No extensions. No excuses.
+Just meticulous planning.`,
     icon: "/icons/time.svg",
   },
   {
     id: "material-mastery",
     title: "Material Mastery",
-    description:
-      "Rare woods. Museum-grade finishes. Materials that manifest the perspective. Surfaces, lived with.",
+    description: `Rare woods. Museum-grade finishes.
+Materials that manifest the perspective.
+Surfaces, lived with.`,
     icon: "/icons/material.svg",
   },
   {
     id: "bespoke",
-    title: "Bespoke",
-    description:
-      "Bespoke means bespoke. No templates. No limits. You choose. We take care of the rest.",
+    title: "Bold. BESPOKE.",
+    description: `Bespoke means bespoke.
+No templates. No limits.
+You choose. We take care of the rest.`,
     icon: "/icons/bespoke.svg",
   },
 ];
 
+
 export default function WhyArchitectsChooseUs() {
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    const totalWidth = track.scrollWidth / 2;
+
+    const tween = gsap.to(track, {
+      x: -totalWidth,
+      duration: 40, // slow luxury speed
+      ease: "none",
+      repeat: -1,
+    });
+
+    return () => {
+      tween.kill();
+    };
+  }, []);
+
+  const duplicated = [...FEATURES, ...FEATURES]; // infinite loop
+
   return (
-    <section className="w-full bg-[#f4f4f5] py-24 lg:py-28">
-      <div className="mx-auto max-w-6xl lg:max-w-7xl xl:max-w-[90rem] px-6 lg:px-10">
+    <section className="w-full bg-[#f4f4f5] py-10 overflow-hidden">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+
         {/* Heading */}
-        <div className="mb-20 text-center">
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-[0.18em] uppercase text-[#2f2a25]">
-            The{" "}
-            <span className="text-[#c1171a]">वा</span>
+        <div className="mb-14 text-center lg:text-left">
+          <h2 className="font-futura uppercase text-2xl md:text-3xl lg:text-4xl tracking-[0.08em] text-[#2f2a25]">
+            The <span className="text-[#c1171a]">वा</span>
             <span className="text-[#2f2a25]">stukar’s Choice</span>
           </h2>
-          <p className="mt-6 text-sm md:text-base lg:text-lg text-[#7a7165] max-w-2xl mx-auto leading-relaxed">
-            Precision, reliability, and uncompromising quality in every collaboration.
-          </p>
         </div>
 
-        {/* Cards */}
-        <div className="grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {FEATURES.map((feature) => (
-            <article key={feature.id} className="h-full">
-              <div
-                className="
-                  flex h-full flex-col items-center text-center
-                  lg:items-start lg:text-left
-                  rounded-2xl border border-[#c3c3c4] bg-[#f4f4f5]
-                  px-7 py-8 lg:px-8 lg:py-9
-                  shadow-[0_10px_35px_rgba(21,19,15,0.08)]
-                  hover:shadow-[0_18px_45px_rgba(21,19,15,0.18)]
-                  hover:-translate-y-1.5
-                  transition-transform transition-shadow duration-300
-                "
+        {/* Horizontal Scroll Wrapper */}
+        <div className="relative w-full overflow-hidden">
+
+          {/* Fade edges for luxury look */}
+          <div className="pointer-events-none absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-[#f4f4f5] to-transparent z-10" />
+          <div className="pointer-events-none absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-[#f4f4f5] to-transparent z-10" />
+
+          {/* Track */}
+          <div
+            ref={trackRef}
+            className="flex gap-10 w-max"
+          >
+            {duplicated.map((feature, index) => (
+              <article
+                key={index}
+                className="flex w-[300px] shrink-0"
               >
-                {/* Icon badge with per-card SVG from /public */}
-                <div className="mb-6 flex h-16 w-16 lg:h-18 lg:w-18 items-center justify-center rounded-full border border-[#c3c3c4] bg-[#f4f4f5]">
-                  <img
-                    src={feature.icon}
-                    alt=""
-                    className="h-7 w-7"
-                  />
+                <div
+                  className="
+                  flex flex-col
+                  w-full
+                  rounded-[28px]
+                  border border-[#d6d6d6]
+                  bg-[#e7e4e4]
+                  px-6 py-6
+                  transition-all duration-300
+                  hover:-translate-y-2
+                  hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)]
+                "
+                >
+                  {/* Icon */}
+                  <div className="h-20 flex items-center justify-center lg:justify-start mb-4">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-full border border-[#d0d0d0] bg-white">
+                      <img src={feature.icon} alt="" className="h-7 w-7" />
+                    </div>
+                  </div>
+
+                  {/* Title */}
+                  <div className="h-[72px] mb-2">
+                    <h3 className="font-futura text-[22px] leading-normal text-[#3b342c]">
+                      {feature.title}
+                    </h3>
+                  </div>
+
+                  {/* Description */}
+                  <div className="flex-1">
+                    <div className="text-[15px] font-futura leading-relaxed text-[#7a7165]">
+                      {feature.description
+                        .split("\n")
+                        .map((line: string, index: number, arr: string[]) => (
+                          <span
+                            key={index}
+                            className={`block ${
+                              index !== arr.length - 1 ? "mb-[6px]" : ""
+                            }`}
+                          >
+                            {line}
+                          </span>
+                        ))}
+                    </div>
+                  </div>
                 </div>
-
-                <h3 className="font-serif text-lg md:text-xl lg:text-[1.3rem] xl:text-xl text-[#3b342c] mb-3">
-                  {feature.title}
-                </h3>
-
-                <p className="text-sm md:text-[15px] lg:text-base leading-relaxed text-[#7a7165] max-w-xs lg:max-w-sm">
-                  {feature.description}
-                </p>
-              </div>
-            </article>
-          ))}
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>

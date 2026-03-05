@@ -22,16 +22,19 @@ import CraftsmanshipSection from "@/components/craftmanship";
 import ProjectsSection from "@/components/theshaile";
 import TestimonialsSection from "@/components/Testimonilas";
 import TheShilpSection from "@/components/theshilp";
+import RouteLoader from "@/components/global/RouteLoader";
 
 export default function Home() {
   return (
+  <>
+    <RouteLoader/>
     <main className="w-full">
       <Hero />
       <WhyArchitectsChooseUs />
       <TheShilpSection />
       <CraftsmanshipSection />
-      <ProjectsSection />
       < TestimonialsSection />
     </main>
+  </>
   );
 }

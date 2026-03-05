@@ -369,8 +369,8 @@ export default function Navbar() {
                   : '/Arqene_Logo_White.png'
               }
               alt="Arqene Luxury Furniture"
-              width={isScrolled ? 115 : 130}
-              height={40}
+              width={isScrolled ? 138 : 156}
+              height={52}
               priority
               className="object-contain select-none transition-all duration-500"
             />

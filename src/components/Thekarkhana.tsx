@@ -145,7 +145,7 @@ const WORKSHOPS = [
   {
     id: "wood-craft",
     title: "Wood Craft Workshop",
-    image: "/craftmanship-images/karkhana-wood.jpeg",
+    image: "/craftmanship-images/wood-craft.png",
     paragraphs: [
       "State CNC routers. Panel saws engineered for repeatability. Edge banders that erase imperfection. Spindle molders for functional profiles. Dust extraction systems that preserve craftsman and material.",
       "But machinery alone builds nothing of consequence.",
@@ -158,7 +158,7 @@ const WORKSHOPS = [
   {
     id: "metal-craft",
     title: "Metal Craft Workshop",
-    image: "/craftmanship-images/karkhana-metal.jpg",
+    image: "/craftmanship-images/metal-craft.jpg",
     paragraphs: [
       "Laser cutting systems. CNC press brakes calibrated for controlled bends and clean tolerances. TIG and MIG welding stations for seamless joints. Surface finishing bays—brushed, patinated, powder-coated.",
       "But metal is not forced.",
@@ -171,7 +171,7 @@ const WORKSHOPS = [
   {
     id: "foam-craft",
     title: "Foam Craft Workshop",
-    image: "/craftmanship-images/karkhana-foam.jpeg",
+    image: "/craftmanship-images/foam-work.jpg",
     paragraphs: [
       "Cutting tables. Industrial stitching machines tuned for uniform tension. Foam profiling systems sculpted to ergonomic intent. Material libraries spanning leathers, textiles, and fabrics.",
       "But comfort cannot be automated.",
@@ -184,7 +184,7 @@ const WORKSHOPS = [
   {
     id: "surface-craft",
     title: "Surface Craft Workshop",
-    image: "/craftmanship-images/karkhana-surface.jpeg",
+    image: "/craftmanship-images/surface.jpg",
     paragraphs: [
       "Controlled environments. Isolated spray booths calibrated for consistency. Precision sanding stations for surface uniformity. Multi-stage coating systems—primers, stains, lacquers—applied in exact sequence.",
       "But finish is not formula.",
@@ -197,7 +197,7 @@ const WORKSHOPS = [
   {
     id: "final-craft",
     title: "Final Craft Workshop",
-    image: "/craftmanship-images/karkhana-final.jpeg",
+    image: "/craftmanship-images/final-craft.jpg",
     paragraphs: [
       "Every piece is fully assembled before it ever leaves the floor. Alignments perfected. Finishes examined under neutral light. Clearances verified. Intent established.",
       "The Hand.",
@@ -207,17 +207,84 @@ const WORKSHOPS = [
   },
 ];
 
+// export default function Thekarkhana() {
+//   return (
+//     <section className="w-full bg-[#f4f4f5] py-24 lg:py-28">
+//       <div className="mx-auto max-w-6xl xl:max-w-7xl px-6 lg:px-10">
+//         {/* Heading – Inside The काrkhana */}
+//         <div className="mb-16 font-futura text-left">
+//           <h2 className=" text-2xl md:text-3xl lg:text-4xl  uppercase tracking-[0.08em] text-[#2f2a25]">
+//             Inside The{" "}
+//             <span className="text-[#c1171a]">का</span>
+//             <span className="text-[#2f2a25]">rkhana</span>
+//           </h2>
+//           <p className="mt-6 text-sm md:text-base lg:text-lg text-[#7a7165] max-w-3xl leading-relaxed">
+//             Our 25,000 sq. ft. facility is a constellation of purpose-built
+//             workshops—where material, machine, and hand operate in disciplined
+//             synchrony.
+//           </p>
+//         </div>
+
+//         {/* Alternating image/text rows */}
+//         <div className="space-y-20 font-futura lg:space-y-24">
+//           {WORKSHOPS.map((workshop, index) => {
+//             const isEven = index % 2 === 0;
+
+//             return (
+//               <div
+//                 key={workshop.id}
+//                 className="grid gap-10 lg:gap-16 lg:grid-cols-2 items-center"
+//               >
+//                 {/* Image */}
+//                 <div
+//                   className={`relative w-full h-64 sm:h-72 lg:h-80 xl:h-[22rem] overflow-hidden rounded-3xl bg-[#d4d4d8]
+//                   ${!isEven ? "lg:order-2" : ""}`}
+//                 >
+//                   <img
+//                     src={workshop.image}
+//                     alt={workshop.title}
+//                     className="h-full w-full object-cover"
+//                   />
+//                 </div>
+
+//                 {/* Text – always left aligned, nice width */}
+//                 <div className="space-y-3 text-left">
+//                   <h3 className="text-2xl lg:text-3xl text-[#2f2a25] mb-2">
+//                     {workshop.title}
+//                   </h3>
+
+//                   {workshop.paragraphs.map((para, i) => (
+//                     <p
+//                       key={i}
+//                       className="text-sm lg:text-base leading-relaxed text-[#6b6458] max-w-xl"
+//                     >
+//                       {para}
+//                     </p>
+//                   ))}
+//                 </div>
+//               </div>
+//             );
+//           })}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
+
+
 export default function Thekarkhana() {
   return (
     <section className="w-full bg-[#f4f4f5] py-24 lg:py-28">
-      <div className="mx-auto max-w-6xl xl:max-w-7xl px-6 lg:px-10">
+      <div className="mx-auto max-w-7xl 2xl:max-w-[1500px] px-6 lg:px-10">
+
         {/* Heading – Inside The काrkhana */}
-        <div className="mb-16 text-left">
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl tracking-[0.18em] uppercase text-[#2f2a25] leading-tight">
+        <div className="mb-18 font-futura text-left">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl uppercase tracking-[0.08em] text-[#2f2a25]">
             Inside The{" "}
             <span className="text-[#c1171a]">का</span>
             <span className="text-[#2f2a25]">rkhana</span>
           </h2>
+
           <p className="mt-6 text-sm md:text-base lg:text-lg text-[#7a7165] max-w-3xl leading-relaxed">
             Our 25,000 sq. ft. facility is a constellation of purpose-built
             workshops—where material, machine, and hand operate in disciplined
@@ -226,37 +293,39 @@ export default function Thekarkhana() {
         </div>
 
         {/* Alternating image/text rows */}
-        <div className="space-y-20 lg:space-y-24">
+        <div className="space-y-24 lg:space-y-28 font-futura">
           {WORKSHOPS.map((workshop, index) => {
             const isEven = index % 2 === 0;
 
             return (
               <div
                 key={workshop.id}
-                className="grid gap-10 lg:gap-16 lg:grid-cols-2 items-center"
+                className="grid gap-12 lg:gap-20 items-center lg:grid-cols-2"
               >
                 {/* Image */}
                 <div
-                  className={`relative w-full h-64 sm:h-72 lg:h-80 xl:h-[22rem] overflow-hidden rounded-3xl bg-[#d4d4d8]
+                  className={`relative w-full 
+                  h-[300px] sm:h-[340px] md:h-[380px] lg:h-[420px] xl:h-[460px]
+                  overflow-hidden rounded-3xl bg-[#d4d4d8]
                   ${!isEven ? "lg:order-2" : ""}`}
                 >
                   <img
                     src={workshop.image}
                     alt={workshop.title}
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-[1.04]"
                   />
                 </div>
 
-                {/* Text – always left aligned, nice width */}
-                <div className="space-y-3 text-left">
-                  <h3 className="font-serif text-2xl lg:text-3xl text-[#2f2a25] mb-2">
+                {/* Text */}
+                <div className="space-y-4 text-left max-w-xl">
+                  <h3 className="text-2xl md:text-3xl lg:text-[30px] text-[#2f2a25]">
                     {workshop.title}
                   </h3>
 
                   {workshop.paragraphs.map((para, i) => (
                     <p
                       key={i}
-                      className="text-sm lg:text-base leading-relaxed text-[#6b6458] max-w-xl"
+                      className="text-sm md:text-base leading-relaxed text-[#6b6458]"
                     >
                       {para}
                     </p>
@@ -266,6 +335,7 @@ export default function Thekarkhana() {
             );
           })}
         </div>
+
       </div>
     </section>
   );

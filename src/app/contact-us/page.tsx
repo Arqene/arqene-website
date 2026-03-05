@@ -85,20 +85,17 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen bg-[#f8f8f6] pt-28 pb-20 px-6 md:px-16">
       
-      {/* ===== Hero Section ===== */}
-      <div className="max-w-5xl mx-auto text-center mb-5">
-        <h1 className="text-3xl md:text-4xl font-serif italic text-[#2e2e2e] mb-6">
-          Contact Us
-        </h1>
-      </div>
 
       {/* ===== Form Section ===== */}
-      <div className="max-w-3xl mx-auto bg-white rounded-3xl shadow-[0_40px_120px_rgba(0,0,0,0.08)] p-6 md:p-12">
-        <form onSubmit={handleSubmit} className="space-y-4">
+      <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-[0_40px_120px_rgba(0,0,0,0.08)] p-6 md:p-12">
+        <h1 className="text-3xl md:text-4xl font-futura text-left text-[#2e2e2e] mb-6">
+          Contact Us
+        </h1>
+        <form onSubmit={handleSubmit} className="space-y-4 font-futura">
           
           {/* Name */}
           <div>
-            <label className="block text-sm font-serif italic tracking-widest mb-3">
+            <label className="block text-sm tracking-widest mb-3">
               Name <span className="text-red-500">*</span>
             </label>
             <Input
@@ -110,7 +107,7 @@ export default function ContactPage() {
 
           {/* Phone */}
           <div>
-            <label className="block text-sm font-serif italic tracking-widest mb-3">
+            <label className="block text-sm tracking-widest mb-3">
               Phone Number
             </label>
             <Input
@@ -122,7 +119,7 @@ export default function ContactPage() {
 
           {/* Email */}
           <div>
-            <label className="block text-sm font-serif italic tracking-widest mb-3">
+            <label className="block text-sm tracking-widest mb-3">
             Email <span className="text-red-500">*</span>
             </label>
             <Input
@@ -135,7 +132,7 @@ export default function ContactPage() {
 
           {/* Message */}
           <div>
-            <label className="block text-sm font-serif italic tracking-widest mb-3">
+            <label className="block text-sm tracking-widest mb-3">
               Tell Us More
             </label>
             <Textarea

@@ -17,10 +17,11 @@ export default async function ProductPage({
 }: {
   params: Promise<{ productId: string }>;
 }) {
-  // ✅ IMPORTANT FIX
+  // IMPORTANT FIX
   const { productId } = await params;
 
   const product = await getProduct(productId);
+  console.log("Product", product);
   if (!product) notFound();
 
   return (

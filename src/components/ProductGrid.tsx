@@ -87,11 +87,13 @@ export default function ProductGrid({ categoryId }: any) {
       const data = await res.json();
 
       setProducts(data.products);
+      // console.log(data.products);
       setLoading(false);
     };
 
     loadProducts();
   }, [categoryId]);
+  // console.log(products);
 
   if (loading) {
     return (
