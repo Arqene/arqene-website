@@ -12,6 +12,7 @@ import RouteLoader from "@/components/global/RouteLoader";
 
 import { Questrial } from "next/font/google";
 import StructuredData from "@/components/Seo/StructuredData";
+import Footer from "@/components/footer";
 
 
 
@@ -77,6 +78,7 @@ export default function RootLayout({
             </LenisProvider>
           </ImageKitProvider>
         </Providers>
+        <Footer/>
       </body>
     </html>
   );
