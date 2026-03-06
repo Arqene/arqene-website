@@ -60,7 +60,7 @@ export default function WhatsAppButton() {
       rel="noopener noreferrer"
       className="
         fixed
-        top-16 md:top-24
+        top-20 md:top-24
         right-0
         z-50
         w-14

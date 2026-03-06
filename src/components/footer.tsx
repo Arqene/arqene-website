@@ -22,7 +22,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#f5f5f5] text-gray-800 mt-20 border-t">
+    <footer className="bg-[#f5f5f5] text-gray-800  border-t">
 
       {/* Top Section */}
       <div className="max-w-7xl mx-auto px-6 py-10 flex justify-end font-futura">
@@ -50,15 +50,15 @@ export default function Footer() {
 
           <p className="text-sm mb-3">
   A Client Advisor is available at{" "}
-  <a href="tel:+9118001039988" className="underline">
-    1800 103 9988
+  <a href="tel:+917017557216" className="underline">
+    7017557216
   </a>.
 </p>
 
           <ul className="space-y-2 text-sm">
             <li><Link href="/products">Product</Link></li>
             <li><Link href="/about-us">About</Link></li>
-            <li><Link href="/the-prakriya">Stores</Link></li>
+            <li><Link href="/the-prakriya">Process</Link></li>
           </ul>
         </div>
 
@@ -88,7 +88,7 @@ export default function Footer() {
           </h3>
 
           <p className="text-sm mb-4">
-            Sign up to receive the latest news, launches, and updates.
+            Connect with us. Our team is here to help you create your dream space with Arqene's timeless luxury Collection.
           </p>
     <Link href="/contact-us">
      <button className="border px-4 py-2 text-sm hover:bg-black hover:text-white transition" >
