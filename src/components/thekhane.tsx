@@ -222,13 +222,13 @@ export default function TheKhaaneeSection() {
                 key={index}
                 src={founder.image}
                 alt="Founder"
-                className="w-[260px] md:w-[320px] h-auto"
+                className="w-full h-auto"
               />
             ))}
           </div>
 
           {/* RIGHT — STORY */}
-          <div className="font-futura max-w-2xl">
+          <div className="font-futura max-w-2xl mt-16 lg:mt-20">
 
             <div className="space-y-6 text-[18px] leading-[1.9] text-[#5f5a50]">
 
