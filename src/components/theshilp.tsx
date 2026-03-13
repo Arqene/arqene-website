@@ -508,18 +508,9 @@ const scrollByCard = (direction: "left" | "right") => {
 
       <div className="mt-10 flex justify-center">
         <Link href="/products">
-          <button className="mt-10 inline-flex items-center justify-center
-                         px-10 py-3
-                         border border-[#d9d9d4]
-                         bg-[#f4f4f5]
-                         text-[11px] font-semibold font-futura tracking-[0.18em] uppercase
-                         text-[#5b554b]
-                         transition-all duration-300
-                         hover:bg-[#cbcbc7] hover:border-[#cbcbc7]
-                         hover:-translate-y-1
-                         cursor-pointer">
-            VIEW ALL PRODUCTS
-          </button>
+                <button className="mt-10 inline-flex items-center justify-center px-12 py-4 rounded-full border border-[#2f2a25] bg-transparent text-[13px] font-futura font-semibold  text-[#2f2a25] transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-[2px] tracking-[0.16em] ">
+                  VIEW ALL PRODUCTS
+                </button>
         </Link>
       </div>
     </section>

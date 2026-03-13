@@ -313,6 +313,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const CAPABILITIES = [
   {
@@ -368,48 +369,37 @@ const CAPABILITIES = [
 
 //   return (
 //     <section className="w-full bg-[#f4f4f5] pt-16 pb-20 lg:pt-20 lg:pb-24">
-
 //       <div className="mx-auto max-w-7xl px-6 lg:px-12">
 
-//         {/* ================= HEADING ================= */}
+//         {/* HEADING */}
 //         <div className="mb-16 max-w-3xl">
-//           <h2 className="font-futura uppercase text-xl md:text-2xl lg:text-3xl uppercase tracking-[0.08em] text-[#2f2a25]">
-//             The{" "}
-//             <span className="text-[#c1171a]">का</span>
+//           <h2 className="font-futura uppercase text-2xl md:text-3xl lg:text-4xl tracking-[0.08em] text-[#2f2a25]">
+//             The <span className="text-[#c1171a]">का</span>
 //             <span className="text-[#111827]">rkhana</span>
 //           </h2>
 
 //           <p className="mt-6 font-futura text-base lg:text-lg leading-relaxed text-[#6b7280]">
-//             Originality doesn't announce itself. It's built in silence—one joint,
-//             one surface, one finish at a time. Our workshop is where intention
-//             becomes artifact. Where wood is understood before it's touched,
-//             and machinery amplifies mastery—never replaces it.
-//             This is how permanence is made.
+//              Originality doesn't announce itself. It's built in silence—one joint,
+//              one surface, one finish at a time. Our workshop is where intention
+//              becomes artifact. Where wood is understood before it's touched,
+//              and machinery amplifies mastery—never replaces it.
+//              This is how permanence is made.
 //           </p>
 //         </div>
 
-//         {/* ================= GRID ================= */}
+//         {/* GRID */}
 //         <div className="grid gap-16 lg:gap-24 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1.4fr)] items-start">
 
-//           {/* ================= IMAGE ================= */}
+//           {/* IMAGE */}
 //           <div className="relative w-full h-80 sm:h-96 lg:h-full lg:min-h-[32rem] overflow-hidden rounded-[40px] bg-[#d4d4d8]">
-
 //             <img
 //               src="/craftmanship-images/craftsmanship.jpeg"
 //               alt="Craftsmanship Workshop"
-//               className="
-//                 h-full w-full
-//                 object-cover
-//                 grayscale
-//                 transition-transform duration-700
-//                 ease-[cubic-bezier(0.22,1,0.36,1)]
-//                 hover:scale-105
-//               "
+//               className="h-full w-full object-cover grayscale transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-105"
 //             />
-
 //           </div>
 
-//           {/* ================= LIST ================= */}
+//           {/* LIST */}
 //           <div className="divide-y divide-[#e5e7eb] mt-10">
 
 //             {CAPABILITIES.map((item, index) => {
@@ -419,25 +409,27 @@ const CAPABILITIES = [
 //               return (
 //                 <div
 //                   key={item.title}
-//                   className="py-8 group cursor-pointer"
+//                   className="py-8 cursor-pointer group"
 //                   onMouseEnter={() => setActive(index)}
 //                 >
-
-//                   <div className="flex gap-6 justify-center items-center">
+//                   {/* FIXED ALIGNMENT */}
+//                   <div className="flex gap-6 items-start">
 
 //                     {/* NUMBER */}
 //                     <div
 //                       className={`
 //                         min-w-[48px]
+//                         translate-y-1
 //                         text-2xl lg:text-3xl
 //                         font-futura italic
 //                         tracking-widest
 //                         transition-colors duration-300
 //                         ${
 //                           isActive
-//                             ? "text-[#4f6d60]"
-//                             : "text-[#c2c7c4]"
+//                             ? "lg:text-[#4f6d60]"
+//                             : "lg:text-[#c2c7c4]"
 //                         }
+//                         text-[#4f6d60]
 //                       `}
 //                     >
 //                       {String(index + 1).padStart(2, "0")}
@@ -449,16 +441,16 @@ const CAPABILITIES = [
 //                       {/* TITLE */}
 //                       <h3
 //                         className={`
-//                           font-luxury
-//                           italic
+//                           font-luxury italic
 //                           text-2xl lg:text-3xl
 //                           mb-2
 //                           transition-colors duration-300
 //                           ${
 //                             isActive
-//                               ? "text-[#4f6d60]"
-//                               : "text-[#c2c7c4]"
+//                               ? "lg:text-[#4f6d60]"
+//                               : "lg:text-[#c2c7c4]"
 //                           }
+//                           text-[#4f6d60]
 //                         `}
 //                       >
 //                         {item.title}
@@ -474,9 +466,10 @@ const CAPABILITIES = [
 //                           transition-colors duration-300
 //                           ${
 //                             isActive
-//                               ? "text-[#2f2a25]"
-//                               : "text-[#9ca3af]"
+//                               ? "lg:text-[#2f2a25]"
+//                               : "lg:text-[#9ca3af]"
 //                           }
+//                           text-[#2f2a25]
 //                         `}
 //                       >
 //                         {item.description}
@@ -488,30 +481,13 @@ const CAPABILITIES = [
 //               );
 //             })}
 
-//             {/* ================= BUTTON ================= */}
+//             {/* BUTTON */}
 //             <div className="pt-12">
-
 //               <Link href="/thekarkhana">
-
-//                 <button
-//                   className="
-// mt-10 inline-flex items-center justify-center
-//                          px-10 py-3
-//                          border border-[#d9d9d4]
-//                          bg-[#f4f4f5]
-//                          text-[11px] font-semibold font-futura tracking-[0.18em] uppercase
-//                          text-[#5b554b]
-//                          transition-all duration-300
-//                          hover:bg-[#cbcbc7] hover:border-[#cbcbc7]
-//                          hover:-translate-y-1
-//                          cursor-pointer
-//                   "
-//                 >
+//                 <button className="mt-10 inline-flex items-center justify-center px-10 py-3 border border-[#d9d9d4] bg-[#f4f4f5] text-[11px] font-semibold font-futura tracking-[0.18em] uppercase text-[#5b554b] transition-all duration-300 hover:bg-[#cbcbc7] hover:border-[#cbcbc7] hover:-translate-y-1 cursor-pointer">
 //                   READ MORE
 //                 </button>
-
 //               </Link>
-
 //             </div>
 
 //           </div>
@@ -521,8 +497,9 @@ const CAPABILITIES = [
 //   );
 // }
 
+
 export default function CraftsmanshipSection() {
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState<number | null>(null);
 
   return (
     <section className="w-full bg-[#f4f4f5] pt-16 pb-20 lg:pt-20 lg:pb-24">
@@ -536,11 +513,11 @@ export default function CraftsmanshipSection() {
           </h2>
 
           <p className="mt-6 font-futura text-base lg:text-lg leading-relaxed text-[#6b7280]">
-             Originality doesn't announce itself. It's built in silence—one joint,
-             one surface, one finish at a time. Our workshop is where intention
-             becomes artifact. Where wood is understood before it's touched,
-             and machinery amplifies mastery—never replaces it.
-             This is how permanence is made.
+            Originality doesn't announce itself. It's built in silence—one joint,
+            one surface, one finish at a time. Our workshop is where intention
+            becomes artifact. Where wood is understood before it's touched,
+            and machinery amplifies mastery—never replaces it.
+            This is how permanence is made.
           </p>
         </div>
 
@@ -557,19 +534,27 @@ export default function CraftsmanshipSection() {
           </div>
 
           {/* LIST */}
-          <div className="divide-y divide-[#e5e7eb] mt-10">
-
+          <div
+            className="divide-y divide-[#e5e7eb] mt-10"
+            onMouseLeave={() => setActive(null)}
+          >
             {CAPABILITIES.map((item, index) => {
-
               const isActive = active === index;
+              const isDimmed = active !== null && !isActive;
 
               return (
-                <div
+                <motion.div
                   key={item.title}
                   className="py-8 cursor-pointer group"
                   onMouseEnter={() => setActive(index)}
+                  animate={{
+                    scale: isActive ? 1.04 : 1,
+                  }}
+                  transition={{
+                    duration: 0.35,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
                 >
-                  {/* FIXED ALIGNMENT */}
                   <div className="flex gap-6 items-start">
 
                     {/* NUMBER */}
@@ -580,13 +565,12 @@ export default function CraftsmanshipSection() {
                         text-2xl lg:text-3xl
                         font-futura italic
                         tracking-widest
-                        transition-colors duration-300
+                        transition-all duration-300
                         ${
-                          isActive
-                            ? "lg:text-[#4f6d60]"
-                            : "lg:text-[#c2c7c4]"
+                          isDimmed
+                            ? "text-[#c2c7c4]"
+                            : "text-[#4f6d60]"
                         }
-                        text-[#4f6d60]
                       `}
                     >
                       {String(index + 1).padStart(2, "0")}
@@ -601,13 +585,12 @@ export default function CraftsmanshipSection() {
                           font-luxury italic
                           text-2xl lg:text-3xl
                           mb-2
-                          transition-colors duration-300
+                          transition-all duration-300
                           ${
-                            isActive
-                              ? "lg:text-[#4f6d60]"
-                              : "lg:text-[#c2c7c4]"
+                            isDimmed
+                              ? "text-[#c2c7c4]"
+                              : "text-[#4f6d60]"
                           }
-                          text-[#4f6d60]
                         `}
                       >
                         {item.title}
@@ -620,13 +603,12 @@ export default function CraftsmanshipSection() {
                           text-sm lg:text-base
                           leading-relaxed
                           max-w-xl
-                          transition-colors duration-300
+                          transition-all duration-300
                           ${
-                            isActive
-                              ? "lg:text-[#2f2a25]"
-                              : "lg:text-[#9ca3af]"
+                            isDimmed
+                              ? "text-[#9ca3af]"
+                              : "text-[#2f2a25]"
                           }
-                          text-[#2f2a25]
                         `}
                       >
                         {item.description}
@@ -634,14 +616,14 @@ export default function CraftsmanshipSection() {
 
                     </div>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
 
             {/* BUTTON */}
             <div className="pt-12">
               <Link href="/thekarkhana">
-                <button className="mt-10 inline-flex items-center justify-center px-10 py-3 border border-[#d9d9d4] bg-[#f4f4f5] text-[11px] font-semibold font-futura tracking-[0.18em] uppercase text-[#5b554b] transition-all duration-300 hover:bg-[#cbcbc7] hover:border-[#cbcbc7] hover:-translate-y-1 cursor-pointer">
+                <button className="mt-10 inline-flex items-center justify-center px-12 py-4 rounded-full border border-[#2f2a25] bg-transparent text-[13px] font-futura font-semibold text-[#2f2a25] transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-[2px] tracking-[0.16em]">
                   READ MORE
                 </button>
               </Link>

@@ -375,7 +375,7 @@
 
 
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 
 const FEATURES = [
@@ -436,9 +436,118 @@ You choose. We take care of the rest.`,
 ];
 
 
+// export default function WhyArchitectsChooseUs() {
+//   const trackRef = useRef<HTMLDivElement>(null);
+
+//   useEffect(() => {
+//     const track = trackRef.current;
+//     if (!track) return;
+
+//     const totalWidth = track.scrollWidth / 2;
+
+//     const tween = gsap.to(track, {
+//       x: -totalWidth,
+//       duration: 40, // slow luxury speed
+//       ease: "none",
+//       repeat: -1,
+//     });
+
+//     return () => {
+//       tween.kill();
+//     };
+//   }, []);
+
+//   const duplicated = [...FEATURES, ...FEATURES]; // infinite loop
+
+//   return (
+//     <section className="w-full bg-[#f4f4f5] py-10 overflow-hidden">
+//       <div className="mx-auto max-w-7xl px-6 lg:px-10">
+
+//         {/* Heading */}
+//         <div className="mb-14 text-center lg:text-left">
+//           <h2 className="font-futura uppercase text-2xl md:text-3xl lg:text-4xl tracking-[0.08em] text-[#2f2a25]">
+//             The <span className="text-[#c1171a]">वा</span>
+//             <span className="text-[#2f2a25]">stukar’s Choice</span>
+//           </h2>
+//         </div>
+
+//         {/* Horizontal Scroll Wrapper */}
+//         <div className="relative w-full overflow-hidden">
+
+//           {/* Fade edges for luxury look */}
+//           <div className="pointer-events-none absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-[#f4f4f5] to-transparent z-10" />
+//           <div className="pointer-events-none absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-[#f4f4f5] to-transparent z-10" />
+
+//           {/* Track */}
+//           <div
+//             ref={trackRef}
+//             className="flex gap-10 w-max"
+//           >
+//             {duplicated.map((feature, index) => (
+//               <article
+//                 key={index}
+//                 className="flex w-[300px] shrink-0"
+//               >
+//                 <div
+//                   className="
+//                   flex flex-col
+//                   w-full
+//                   rounded-[28px]
+//                   border border-[#d6d6d6]
+//                   bg-[#e7e4e4]
+//                   px-6 py-6
+//                   transition-all duration-300
+//                   hover:-translate-y-2
+//                   hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)]
+//                 "
+//                 >
+//                   {/* Icon */}
+//                   <div className="h-20 flex items-center justify-center lg:justify-start mb-4">
+//                     <div className="flex h-16 w-16 items-center justify-center rounded-full border border-[#d0d0d0] bg-white">
+//                       <img src={feature.icon} alt="" className="h-7 w-7" />
+//                     </div>
+//                   </div>
+
+//                   {/* Title */}
+//                   <div className="h-[72px] mb-2">
+//                     <h3 className="font-futura text-[22px] leading-normal text-[#3b342c]">
+//                       {feature.title}
+//                     </h3>
+//                   </div>
+
+//                   {/* Description */}
+//                   <div className="flex-1">
+//                     <div className="text-[15px] font-futura leading-relaxed text-[#7a7165]">
+//                       {feature.description
+//                         .split("\n")
+//                         .map((line: string, index: number, arr: string[]) => (
+//                           <span
+//                             key={index}
+//                             className={`block ${
+//                               index !== arr.length - 1 ? "mb-[6px]" : ""
+//                             }`}
+//                           >
+//                             {line}
+//                           </span>
+//                         ))}
+//                     </div>
+//                   </div>
+//                 </div>
+//               </article>
+//             ))}
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
+
+
 export default function WhyArchitectsChooseUs() {
   const trackRef = useRef<HTMLDivElement>(null);
+  const tweenRef = useRef<gsap.core.Tween | null>(null);
 
+  /* GSAP Auto Scroll */
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
@@ -447,17 +556,32 @@ export default function WhyArchitectsChooseUs() {
 
     const tween = gsap.to(track, {
       x: -totalWidth,
-      duration: 40, // slow luxury speed
+      duration: 40,
       ease: "none",
       repeat: -1,
     });
+
+    tweenRef.current = tween;
 
     return () => {
       tween.kill();
     };
   }, []);
 
-  const duplicated = [...FEATURES, ...FEATURES]; // infinite loop
+  /* Pause / Resume on hover (desktop only) */
+  const handleMouseEnter = () => {
+    if (window.innerWidth >= 768) {
+      tweenRef.current?.pause();
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (window.innerWidth >= 768) {
+      tweenRef.current?.resume();
+    }
+  };
+
+  const duplicated = [...FEATURES, ...FEATURES];
 
   return (
     <section className="w-full bg-[#f4f4f5] py-10 overflow-hidden">
@@ -471,12 +595,12 @@ export default function WhyArchitectsChooseUs() {
           </h2>
         </div>
 
-        {/* Horizontal Scroll Wrapper */}
+        {/* Carousel Wrapper */}
         <div className="relative w-full overflow-hidden">
 
-          {/* Fade edges for luxury look */}
-          <div className="pointer-events-none absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-[#f4f4f5] to-transparent z-10" />
-          <div className="pointer-events-none absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-[#f4f4f5] to-transparent z-10" />
+          {/* Blur edges only for desktop */}
+          <div className="hidden md:block pointer-events-none absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-[#f4f4f5] to-transparent z-10" />
+          <div className="hidden md:block pointer-events-none absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-[#f4f4f5] to-transparent z-10" />
 
           {/* Track */}
           <div
@@ -487,6 +611,8 @@ export default function WhyArchitectsChooseUs() {
               <article
                 key={index}
                 className="flex w-[300px] shrink-0"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
               >
                 <div
                   className="
@@ -532,10 +658,12 @@ export default function WhyArchitectsChooseUs() {
                         ))}
                     </div>
                   </div>
+
                 </div>
               </article>
             ))}
           </div>
+
         </div>
       </div>
     </section>

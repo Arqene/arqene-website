@@ -115,14 +115,15 @@
 //   );
 // }
 
-
 "use client";
 
-import { useMemo, useState, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
+import { useMemo } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import ProductGrid from "./ProductGrid";
 
 export default function CategoryTabs({ categories }: any) {
+
+  const router = useRouter();
   const searchParams = useSearchParams();
   const categoryFromUrl = searchParams.get("category");
 
@@ -134,54 +135,49 @@ export default function CategoryTabs({ categories }: any) {
     return Array.from(map.values());
   }, [categories]);
 
-  const [activeCategory, setActiveCategory] = useState<number | null>(null);
+  const activeCategory = categoryFromUrl
+    ? Number(categoryFromUrl)
+    : uniqueCategories[0]?.id;
 
-  useEffect(() => {
-    if (!uniqueCategories.length) return;
-
-    if (categoryFromUrl) {
-      const parsed = Number(categoryFromUrl);
-      const exists = uniqueCategories.find(c => c.id === parsed);
-
-      if (exists) {
-        setActiveCategory(parsed);
-        return;
-      }
-    }
-
-    // fallback to first category
-    setActiveCategory(uniqueCategories[0].id);
-  }, [uniqueCategories, categoryFromUrl]);
-
-  if (!uniqueCategories.length || activeCategory === null) {
-    return null;
-  }
+  if (!uniqueCategories.length) return null;
 
   return (
     <>
-      {/* CATEGORY NAV */}
       <div className="px-6 md:px-16 flex gap-6 overflow-x-auto pb-8">
-        {uniqueCategories.map((cat: any) => (
-          <button
-            key={`category-${cat.id}`}
-            onClick={() => setActiveCategory(cat.id)}
-            className={`
-              text-sm
-              tracking-wide
-              uppercase
-              font-futura
-              whitespace-nowrap
-              transition-colors
-              ${
-                activeCategory === cat.id
-                  ? "text-[#2e2e2e] border-b border-[#2e2e2e]"
-                  : "text-gray-400 hover:text-[#2e2e2e]"
-              }
-            `}
-          >
-            {cat.name}
-          </button>
-        ))}
+
+        {uniqueCategories.map((cat: any) => {
+
+          const isActive = activeCategory === cat.id;
+
+          return (
+            <button
+              key={`category-${cat.id}`}
+              onClick={() => {
+                const params = new URLSearchParams(searchParams.toString());
+                params.set("category", String(cat.id));
+
+                router.push(`/products/furniture?${params.toString()}`, {
+                  scroll: false,
+                });
+              }}
+              className={`
+                text-sm
+                tracking-wide
+                uppercase
+                font-futura
+                whitespace-nowrap
+                transition-colors
+                ${
+                  isActive
+                    ? "text-[#2e2e2e] border-b border-[#2e2e2e]"
+                    : "text-gray-400 hover:text-[#2e2e2e]"
+                }
+              `}
+            >
+              {cat.name}
+            </button>
+          );
+        })}
       </div>
 
       <ProductGrid categoryId={activeCategory} />

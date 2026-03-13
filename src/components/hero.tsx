@@ -119,7 +119,7 @@ export default function LuxuryHeroWithDiscover() {
           {/* <p className="text-2xl font-light uppercase sm:text-3xl lg:text-4xl leading-relaxed text-[#a28764] ">
             Architects design it. We build it and install it.
           </p> */}
-  <p className="text-2xl sm:text-3xl lg:text-4xl  text-[#a28764] uppercase tracking-[0.08em] font-futura font-thin">
+  <p className="text-2xl sm:text-3xl lg:text-4xl  text-[#926832] uppercase tracking-[0.08em] font-futura font-thin">
 
   Architects design it. We{" "}
   <span className="font-luxury italic text-[#4e6a60] text-[1.2em] normal-case text-4xl sm:text-5xl lg:text-6xl">
@@ -136,21 +136,10 @@ export default function LuxuryHeroWithDiscover() {
 
 </p>
 
-          <Link href="/about-us">
-            <button
-              className="mt-10 inline-flex items-center justify-center
-                         px-10 py-3
-                         border border-[#d9d9d4]
-                         bg-[#f4f4f5]
-                         text-[11px] font-semibold font-futura tracking-[0.18em] uppercase
-                         text-[#5b554b]
-                         transition-all duration-300
-                         hover:bg-[#cbcbc7] hover:border-[#cbcbc7]
-                         hover:-translate-y-1
-                         cursor-pointer"
-            >
-              READ MORE
-            </button>
+          <Link href="/about-us" className="text-center">
+                <button className="mt-10 inline-flex items-center justify-center px-12 py-4 rounded-full border border-[#2f2a25] bg-transparent text-[13px] font-futura font-semibold  text-[#2f2a25] transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-[2px] tracking-[0.16em] ">
+                  READ MORE
+                </button>
           </Link>
 
         </div>

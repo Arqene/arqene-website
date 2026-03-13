@@ -188,6 +188,8 @@
 //     </section>
 //   );
 // }
+
+
 "use client";
 
 type Founder = {
@@ -203,7 +205,7 @@ const FOUNDERS: Founder[] = [
 export default function TheKhaaneeSection() {
   return (
     <section className="w-full bg-[#f4f4f5] text-[#2f2a25]">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 py-28 lg:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10 py-20 lg:py-34">
 
         {/* SECTION HEADING */}
         <div className="mb-10 font-futura">
@@ -218,17 +220,26 @@ export default function TheKhaaneeSection() {
           {/* LEFT — Founder Image */}
           <div>
             {FOUNDERS.map((founder, index) => (
+              <div
+              key={index}
+               className="relative
+                  w-full
+                  rounded-3xl
+                  overflow-hidden
+                  bg-[#e9e9e7]"
+                  
+                  >
               <img
-                key={index}
-                src={founder.image}
-                alt="Founder"
-                className="w-full h-auto"
+              src={founder.image}
+              alt="Founder"
+              className="w-full h-full rounded-3xl transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-105"
               />
+              </div>
             ))}
           </div>
 
           {/* RIGHT — STORY */}
-          <div className="font-futura max-w-2xl mt-16 lg:mt-20">
+          <div className="font-futura max-w-2xl mt-4 lg:mt-10">
 
             <div className="space-y-6 text-[18px] leading-[1.9] text-[#5f5a50]">
 
