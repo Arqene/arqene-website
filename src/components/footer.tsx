@@ -27,15 +27,7 @@ export default function Footer() {
       {/* Top Section */}
       <div className="max-w-7xl mx-auto px-6 py-10 flex justify-end font-futura">
 
-        <div className="flex gap-6 text-sm">
-        
-
-          <Link href="/legal" className="hover:underline">
-            Legal & Privacy
-          </Link>
-
-         
-        </div>
+       
 
       </div>
 
@@ -48,12 +40,35 @@ export default function Footer() {
             Help
           </h3>
 
-          <p className="text-sm mb-3">
-  A Client Advisor is available at{" "}
-  <a href="tel:+917017557216" className="underline">
-    7017557216
-  </a>.
-</p>
+          <div className="text-sm space-y-0 ">
+
+  <p>
+    A Client Advisor is available at{" "}
+    <a href="tel:+917017557216" className="underline">
+      +91 7017557216
+    </a>.
+  </p>
+
+  <p>
+    You can also{" "}
+    <a
+      href="https://wa.me/917017557216"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="underline"
+    >
+      chat
+    </a>{" "}
+    or{" "}
+    <a
+      href="mailto:info@arqene.com"
+      className="underline"
+    >
+      email us
+    </a>.
+  </p>
+
+</div>
 
           <ul className="space-y-2 text-sm">
             <li><Link href="/products">Product</Link></li>
@@ -70,33 +85,29 @@ export default function Footer() {
           </h4>
 
           <p className="text-sm leading-6">
-            Your Company Name <br />
-            Street Address <br />
-            City, Country
+            Arqené <br />
+            South City I, Sector 30 <br />
+            Gurugram, Haryana 122009,India
           </p>
 
-          <p className="text-xs text-gray-500 mt-3">
-            Please refer to the product label for specific country of origin.
-          </p>
         </div>
 
 
         {/* Connect (RIGHT) */}
         <div className="text-right">
-          <h3 className="text-xs uppercase tracking-widest text-gray-500 mb-4">
-            Connect
-          </h3>
+          {/* <div className="flex gap-6 text-sm"> */}
+        
 
-          <p className="text-sm mb-4">
-            Connect with us. Our team is here to help you create your dream space with Arqene's timeless luxury Collection.
-          </p>
-    <Link href="/contact-us">
-     <button className="border px-4 py-2 text-sm hover:bg-black hover:text-white transition" >
-            Connect
-          </button>
-    </Link>
+         <Link href="/legal?tab=privacy" className="hover:underline">
+  Privacy Policy <br />
+</Link>
+
+<Link href="/legal?tab=terms" className="hover:underline">
+  Terms & Conditions
+</Link>
+
          
-
+        {/* </div> */}
           <p
             onClick={handleFollowClick}
             className="mt-4 text-sm underline cursor-pointer"

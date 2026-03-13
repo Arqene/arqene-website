@@ -274,12 +274,24 @@ export default function TheKhaaneeSection() {
 
             {/* SIGNATURE IMAGE */}
             <div className="mt-12">
-              <img
-                src="/founders/signature.png"
-                alt="Signature"
-                className="h-10 w-auto"
-              />
-            </div>
+
+  <img
+    src="/founders/signature.png"
+    alt="Signature"
+    className="h-10 w-auto"
+  />
+
+  <div className="mt-3">
+    <p className="text-sm font-medium text-black">
+      Sandeep
+    </p>
+
+    <p className="text-xs tracking-widest text-gray-500 uppercase">
+      Principal Designer
+    </p>
+  </div>
+
+</div>
 
           </div>
 
