@@ -633,7 +633,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
 const TESTIMONIALS = [
   
@@ -707,6 +707,176 @@ const TESTIMONIALS = [
 
 ];
 
+// export default function TestimonialsSection() {
+//   const sectionRef = useRef<HTMLDivElement | null>(null);
+//   const trackRef = useRef<HTMLDivElement | null>(null);
+//   const autoTweenRef = useRef<gsap.core.Tween | null>(null);
+
+//   /* ================= AUTO SCROLL ================= */
+//   useEffect(() => {
+//     const section = sectionRef.current;
+//     const track = trackRef.current;
+//     if (!section || !track) return;
+
+//     const totalWidth = track.scrollWidth / 2;
+
+//     const startAuto = () => {
+//       autoTweenRef.current?.kill();
+
+//       autoTweenRef.current = gsap.to(track, {
+//         x: `-=${totalWidth}`,
+//         duration: 45,
+//         ease: "none",
+//         repeat: -1,
+//         modifiers: {
+//           x: (x) => {
+//             const value = parseFloat(x);
+//             return `${value % totalWidth}px`;
+//           },
+//         },
+//       });
+//     };
+
+//     startAuto();
+
+//     ScrollTrigger.create({
+//       trigger: section,
+//       start: "top 90%",
+//       end: "bottom 10%",
+//       onEnter: () => autoTweenRef.current?.play(),
+//       onEnterBack: () => autoTweenRef.current?.play(),
+//       onLeave: () => autoTweenRef.current?.pause(),
+//       onLeaveBack: () => autoTweenRef.current?.pause(),
+//     });
+
+//     return () => {
+//       autoTweenRef.current?.kill();
+//     };
+//   }, []);
+
+//   /* ================= MANUAL ARROWS ================= */
+//   const scrollByCard = (direction: "left" | "right") => {
+//     const track = trackRef.current;
+//     if (!track) return;
+
+//     const firstCard = track.querySelector("article") as HTMLElement | null;
+//     const cardWidth = firstCard ? firstCard.offsetWidth + 48 : 600;
+
+//     const totalWidth = track.scrollWidth / 2;
+//     const currentX = (gsap.getProperty(track, "x") as number) || 0;
+
+//     let targetX =
+//       direction === "left"
+//         ? currentX + cardWidth
+//         : currentX - cardWidth;
+
+//     if (targetX <= -totalWidth) targetX += totalWidth;
+//     if (targetX >= 0) targetX -= totalWidth;
+
+//     autoTweenRef.current?.kill();
+
+//     gsap.to(track, {
+//       x: targetX,
+//       duration: 1,
+//       ease: "power3.out",
+//       onComplete: () => {
+//         autoTweenRef.current = gsap.to(track, {
+//           x: `-=${totalWidth}`,
+//           duration: 45,
+//           ease: "none",
+//           repeat: -1,
+//           modifiers: {
+//             x: (x) => {
+//               const value = parseFloat(x);
+//               return `${value % totalWidth}px`;
+//             },
+//           },
+//         });
+//       },
+//     });
+//   };
+
+//   return (
+//     <section
+//       ref={sectionRef}
+//       className="py-24 bg-[#f4f4f2] overflow-hidden font-futura"
+//     >
+//       {/* Heading */}
+//       <div className="max-w-7xl mx-auto px-6 md:px-16 mb-16">
+//         <h2 className=" text-xl md:text-2xl lg:text-3xl uppercase tracking-[0.08em] text-[#2f2a25]">
+//           The <span className="text-[#c1171a]">Sha</span>ब्द
+//         </h2>
+//       </div>
+
+//       <div className="relative">
+
+//         {/* LEFT ARROW */}
+//         <button
+//           onClick={() => scrollByCard("left")}
+//           className="hidden lg:flex absolute left-8 md:left-12 lg:left-20 top-1/2 -translate-y-1/2 z-30 text-gray-300 hover:text-[#2f2a25] transition-colors duration-300"
+//         >
+//           <svg className="w-10 h-10" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+//             <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+//           </svg>
+//         </button>
+
+//         {/* RIGHT ARROW */}
+//         <button
+//           onClick={() => scrollByCard("right")}
+//           className="hidden lg:flex absolute right-8 md:right-12 lg:right-20 top-1/2 -translate-y-1/2 z-30 text-gray-300 hover:text-[#2f2a25] transition-colors duration-300"
+//         >
+//           <svg className="w-10 h-10" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+//             <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5L15.75 12l-7.5 7.5" />
+//           </svg>
+//         </button>
+
+//         {/* TRACK */}
+//         <div
+//           ref={trackRef}
+//           className="flex gap-12 px-8 md:px-12 lg:px-20"
+//         >
+//           {[...TESTIMONIALS, ...TESTIMONIALS].map((t, index) => (
+//             <article
+//               key={t.id + index}
+//               className="flex-shrink-0 w-[85vw] md:w-[50vw] lg:w-[35vw]  max-w-[580px]"
+//             >
+//               <div className="h-full min-h-[420px] flex flex-col justify-between bg-[#e8e6e3] rounded-[40px] px-12 py-12 shadow-[0_25px_60px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-3">
+
+//                 <div>
+//                   <p className="text-[20px] tracking-[0.3em] uppercase text-[#b0a38d] mb-4">
+//                     {t.id}
+//                   </p>
+
+//                   <p className="text-base lg:text-md leading-relaxed text-[#3b342c] ">
+//                     “{t.quote}”
+//                   </p>
+//                 </div>
+
+//                 <div>
+//                   <div className="h-px bg-[#d8d5d2] my-2"></div>
+
+//                   <p className="font-semibold text-[#2f2720] text-lg">
+//                     {t.author}
+//                   </p>
+//                   <p className="text-xs uppercase tracking-[0.25em] text-[#7a7165] mt-1">
+//                     {t.location}
+//                   </p>
+//                 </div>
+
+//               </div>
+//             </article>
+//           ))}
+
+//           <div className="flex-shrink-0 w-[10vw]" />
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
+
+
+gsap.registerPlugin(ScrollTrigger);
+
 export default function TestimonialsSection() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const trackRef = useRef<HTMLDivElement | null>(null);
@@ -753,6 +923,15 @@ export default function TestimonialsSection() {
       autoTweenRef.current?.kill();
     };
   }, []);
+
+  /* ================= HOVER PAUSE ================= */
+  const handleMouseEnter = () => {
+    autoTweenRef.current?.pause();
+  };
+
+  const handleMouseLeave = () => {
+    autoTweenRef.current?.resume();
+  };
 
   /* ================= MANUAL ARROWS ================= */
   const scrollByCard = (direction: "left" | "right") => {
@@ -803,7 +982,7 @@ export default function TestimonialsSection() {
     >
       {/* Heading */}
       <div className="max-w-7xl mx-auto px-6 md:px-16 mb-16">
-        <h2 className=" text-xl md:text-2xl lg:text-3xl uppercase tracking-[0.08em] text-[#2f2a25]">
+        <h2 className="text-xl md:text-2xl lg:text-3xl uppercase tracking-[0.08em] text-[#2f2a25]">
           The <span className="text-[#c1171a]">Sha</span>ब्द
         </h2>
       </div>
@@ -838,7 +1017,9 @@ export default function TestimonialsSection() {
           {[...TESTIMONIALS, ...TESTIMONIALS].map((t, index) => (
             <article
               key={t.id + index}
-              className="flex-shrink-0 w-[85vw] md:w-[50vw] lg:w-[35vw]  max-w-[580px]"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              className="flex-shrink-0 w-[85vw] md:w-[50vw] lg:w-[35vw] max-w-[580px]"
             >
               <div className="h-full min-h-[420px] flex flex-col justify-between bg-[#e8e6e3] rounded-[40px] px-12 py-12 shadow-[0_25px_60px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-3">
 
@@ -847,7 +1028,7 @@ export default function TestimonialsSection() {
                     {t.id}
                   </p>
 
-                  <p className="text-base lg:text-md leading-relaxed text-[#3b342c] ">
+                  <p className="text-base lg:text-md leading-relaxed text-[#3b342c]">
                     “{t.quote}”
                   </p>
                 </div>

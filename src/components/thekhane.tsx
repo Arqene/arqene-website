@@ -241,7 +241,7 @@ export default function TheKhaaneeSection() {
           {/* RIGHT — STORY */}
           <div className="font-futura max-w-2xl mt-4 lg:mt-10">
 
-            <div className="space-y-6 text-[18px] leading-[1.9] text-[#5f5a50]">
+            <div className="space-y-3 text-[18px] leading-[1.9] text-[#5f5a50]">
 
               <p>
                 We didn't begin with ambition. We began with immaturity,
@@ -273,16 +273,16 @@ export default function TheKhaaneeSection() {
             </div>
 
             {/* SIGNATURE IMAGE */}
-            <div className="mt-12">
+            <div className="mt-2">
 
   <img
     src="/founders/signature.png"
     alt="Signature"
-    className="h-10 w-auto"
+    className="h-14 w-auto"
   />
 
   <div className="mt-3">
-    <p className="text-sm font-medium text-black">
+    <p className="text-sm font-semibold tracking-[0.12rem] text-black">
       Sandeep
     </p>
 

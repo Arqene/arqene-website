@@ -168,6 +168,368 @@
 // }
 
 
+
+
+
+
+// "use client";
+
+// import { useEffect, useRef, useState } from "react";
+// import Link from "next/link";
+// import axios from "axios";
+// import IKImage from "@/components/IkImage";
+// import { productSections } from "@/config/productSection";
+// import gsap from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// gsap.registerPlugin(ScrollTrigger);
+
+// type SectionData = {
+//   slug: string;
+//   title: string;
+//   folder: string;
+//   coverUrl: string | null;
+// };
+
+// export default function ProjectsSection() {
+//   const sectionRef = useRef<HTMLDivElement | null>(null);
+//   const trackRef = useRef<HTMLDivElement | null>(null);
+
+//   const autoTweenRef = useRef<gsap.core.Tween | null>(null);
+//   const maxScrollRef = useRef(0);
+
+//   const [sections, setSections] = useState<SectionData[]>([]);
+
+//   /* ================= FETCH IMAGEKIT ================= */
+//   useEffect(() => {
+//     const fetchImages = async () => {
+//       const data = await Promise.all(
+//         productSections.map(async (section) => {
+//           const res = await axios.get(
+//             `/api/imagekit/list`,
+//             {
+//               params: {
+//                 folder: `/${section.folder}`,
+//               },
+//             }
+//           );
+
+//           const files = res.data;
+
+//           const cover = files.find((f: any) =>
+//             f.filePath.endsWith("/HomePage")
+//           );
+
+//           return {
+//             ...section,
+//             coverUrl: cover?.url ?? null
+//           };
+//         })
+//       );
+
+//       setSections(data);
+//     };
+
+//     fetchImages();
+//   }, []);
+
+//   /* ================= GSAP AUTO SCROLL ================= */
+//     // useEffect(() => {
+//     //   if (!sections.length) return;
+
+//     //   const section = sectionRef.current;
+//     //   const track = trackRef.current;
+//     //   if (!section || !track) return;
+
+//     //   const ctx = gsap.context(() => {
+
+//     //     // Because we duplicated content
+//     //     const totalWidth = track.scrollWidth / 2;
+
+//     //     const tween = gsap.to(track, {
+//     //       x: `-=${totalWidth}`,
+//     //       duration: 40,
+//     //       ease: "none",
+//     //       repeat: -1, // ✅ true infinite
+//     //       modifiers: {
+//     //         x: (x) => {
+//     //           const value = parseFloat(x);
+//     //           return `${value % totalWidth}px`;
+//     //         }
+//     //       },
+//     //       invalidateOnRefresh: true,
+//     //     });
+
+//     //     autoTweenRef.current = tween;
+
+//     //     ScrollTrigger.create({
+//     //       trigger: section,
+//     //       start: "top 90%",
+//     //       end: "bottom 10%",
+//     //       onEnter: () => tween.play(),
+//     //       onEnterBack: () => tween.play(),
+//     //       onLeave: () => tween.pause(),
+//     //       onLeaveBack: () => tween.pause(),
+//     //     });
+
+//     //   }, section);
+
+//     //   return () => ctx.revert();
+//     // }, [sections]);
+
+//   // console.log("Section",sections);
+
+// /* ================= GSAP AUTO SCROLL ================= */
+// useEffect(() => {
+//   if (!sections.length) return;
+
+//   const section = sectionRef.current;
+//   const track = trackRef.current;
+//   if (!section || !track) return;
+
+//   const totalWidth = track.scrollWidth / 2;
+
+//   const startAutoScroll = () => {
+//     autoTweenRef.current?.kill();
+
+//     autoTweenRef.current = gsap.to(track, {
+//       x: `-=${totalWidth}`,
+//       duration: 40,
+//       ease: "none",
+//       repeat: -1,
+//       modifiers: {
+//         x: (x) => {
+//           const value = parseFloat(x);
+//           return `${value % totalWidth}px`;
+//         }
+//       }
+//     });
+//   };
+
+//   startAutoScroll();
+
+//   ScrollTrigger.create({
+//     trigger: section,
+//     start: "top 90%",
+//     end: "bottom 10%",
+//     onEnter: () => autoTweenRef.current?.play(),
+//     onEnterBack: () => autoTweenRef.current?.play(),
+//     onLeave: () => autoTweenRef.current?.pause(),
+//     onLeaveBack: () => autoTweenRef.current?.pause(),
+//   });
+
+//   return () => {
+//     autoTweenRef.current?.kill();
+//   };
+
+// }, [sections]);
+//   /* ================= MANUAL ARROW ================= */
+//   // const scrollByCard = (direction: "left" | "right") => {
+//   //   const track = trackRef.current;
+//   //   if (!track) return;
+
+//   //   const firstCard = track.querySelector("article") as HTMLElement | null;
+//   //   const cardWidth = firstCard ? firstCard.offsetWidth + 32 : 400;
+
+//   //   const currentX = (gsap.getProperty(track, "x") as number) || 0;
+//   //   let targetX =
+//   //     direction === "left" ? currentX + cardWidth : currentX - cardWidth;
+
+//   //   if (targetX > 0) targetX = 0;
+//   //   if (targetX < -maxScrollRef.current)
+//   //     targetX = -maxScrollRef.current;
+
+//   //   autoTweenRef.current?.pause();
+
+//   //   gsap.to(track, {
+//   //     x: targetX,
+//   //     duration: 0.8,
+//   //     ease: "power3.out",
+//   //   });
+//   // };
+
+//   /* ================= MANUAL ARROW (INFINITE) ================= */
+// const scrollByCard = (direction: "left" | "right") => {
+//   const track = trackRef.current;
+//   if (!track) return;
+
+//   const firstCard = track.querySelector("article") as HTMLElement | null;
+//   const cardWidth = firstCard ? firstCard.offsetWidth + 32 : 400;
+
+//   const totalWidth = track.scrollWidth / 2;
+//   const currentX = (gsap.getProperty(track, "x") as number) || 0;
+
+//   let targetX =
+//     direction === "left"
+//       ? currentX + cardWidth
+//       : currentX - cardWidth;
+
+//   // Infinite wrap
+//   if (targetX <= -totalWidth) targetX += totalWidth;
+//   if (targetX >= 0) targetX -= totalWidth;
+
+//   // 🔥 Kill current infinite tween completely
+//   autoTweenRef.current?.kill();
+
+//   // Manual smooth movement
+//   gsap.to(track, {
+//     x: targetX,
+//     duration: 1,
+//     ease: "power3.out",
+//     onComplete: () => {
+
+//       // 🔥 Restart infinite scroll FROM NEW POSITION
+//       autoTweenRef.current = gsap.to(track, {
+//         x: `-=${totalWidth}`,
+//         duration: 40,
+//         ease: "none",
+//         repeat: -1,
+//         modifiers: {
+//           x: (x) => {
+//             const value = parseFloat(x);
+//             return `${value % totalWidth}px`;
+//           }
+//         }
+//       });
+
+//     }
+//   });
+// };
+
+//   return (
+//     <section
+//       ref={sectionRef}
+//       className="py-14 bg-[#f4f4f2] overflow-hidden"
+//     >
+//       {/* HEADING */}
+//       <div className="max-w-7xl mx-auto px-6 md:px-16 mb-16">
+//           <h2 className="font-futura uppercase text-2xl md:text-3xl lg:text-4xl  tracking-[0.08em] text-[#2f2a25]">
+//              The{" "}
+//              <span className="text-[#2f2a25]">Shi</span>
+//              <span className="text-[#c1171a]">ल्प</span>
+//            </h2>
+//       </div>
+
+//       <div className="relative">
+
+//       {/* LEFT ARROW */}
+//       <button
+//         type="button"
+//         onClick={() => scrollByCard("left")}
+//         className="
+//           hidden lg:flex
+//           absolute
+//           left-8 md:left-12 lg:left-20
+//           top-1/2 -translate-y-1/2
+//           z-30
+//           items-center justify-center
+//           text-gray-200
+//            hover:text-[#2f2a25]
+//           transition-colors duration-300
+//         "
+//         aria-label="Previous projects"
+//       >
+//         <svg
+//           xmlns="http://www.w3.org/2000/svg"
+//           fill="none"
+//           viewBox="0 0 24 24"
+//           strokeWidth={1.5}
+//           stroke="currentColor"
+//           className="w-10 h-10"
+//         >
+//           <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+//         </svg>
+//       </button>
+
+//       {/* RIGHT ARROW */}
+//       <button
+//         type="button"
+//         onClick={() => scrollByCard("right")}
+//         className="
+//           hidden lg:flex
+//           absolute
+//           right-8 md:right-12 lg:right-20
+//           top-1/2 -translate-y-1/2
+//           z-30
+//           items-center justify-center
+//           text-gray-200
+//           hover:text-[#2f2a25]
+//           transition-colors duration-300
+//         "
+//         aria-label="Next projects"
+//       >
+//         <svg
+//           xmlns="http://www.w3.org/2000/svg"
+//           fill="none"
+//           viewBox="0 0 24 24"
+//           strokeWidth={1.5}
+//           stroke="currentColor"
+//           className="w-10 h-10"
+//         >
+//           <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5L15.75 12l-7.5 7.5" />
+//         </svg>
+//       </button>
+
+//         {/* TRACK */}
+//         <div
+//           ref={trackRef}
+//           className="flex gap-8 px-8 md:px-16 lg:px-32"
+//         >
+//           {[...sections, ...sections].map((section, index) => (
+//             <Link
+//               key={section.slug + index}
+//               href={`/products/${section.slug}`}
+//               className="group flex-shrink-0 w-[85vw] md:w-[50vw] lg:w-[32vw] max-w-[540px]"
+//             >
+//               <article className="flex flex-col">
+
+//                 <div className="relative w-full aspect-[16/10] overflow-hidden rounded-sm bg-[#e9e9e7]">
+//                   <div className="absolute inset-0 transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.08]">
+
+//                     {section.coverUrl && (
+//                       <IKImage
+//                         src={section.coverUrl}  
+//                         alt={section.title}
+//                       />
+//                     )}
+
+//                   </div>
+
+//                   <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+//                 </div>
+
+//                 <h3 className="mt-6 text-[20px] md:text-[24px] font-futura uppercase tracking-wide text-[#3a3a3a] group-hover:text-[#873807] transition-colors text-center">
+//                   {section.title}
+//                 </h3>
+
+//               </article>
+//             </Link>
+//           ))}
+
+//           <div className="flex-shrink-0 w-[10vw]" />
+//         </div>
+//       </div>
+
+//       <div className="mt-10 flex justify-center">
+//         <Link href="/products">
+//                 <button className="mt-10 inline-flex items-center justify-center px-12 py-4 rounded-full border border-[#2f2a25] bg-transparent text-[13px] font-futura font-semibold  text-[#2f2a25] transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-[2px] tracking-[0.16em] ">
+//                   VIEW ALL PRODUCTS
+//                 </button>
+//         </Link>
+//       </div>
+//     </section>
+//   );
+// }
+
+
+
+
+
+
+
+
+
+
 "use client";
 
 import { useEffect, useRef, useState } from "react";
@@ -188,27 +550,28 @@ type SectionData = {
 };
 
 export default function ProjectsSection() {
+
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const trackRef = useRef<HTMLDivElement | null>(null);
 
   const autoTweenRef = useRef<gsap.core.Tween | null>(null);
-  const maxScrollRef = useRef(0);
 
   const [sections, setSections] = useState<SectionData[]>([]);
 
   /* ================= FETCH IMAGEKIT ================= */
+
   useEffect(() => {
+
     const fetchImages = async () => {
+
       const data = await Promise.all(
         productSections.map(async (section) => {
-          const res = await axios.get(
-            `/api/imagekit/list`,
-            {
-              params: {
-                folder: `/${section.folder}`,
-              },
-            }
-          );
+
+          const res = await axios.get(`/api/imagekit/list`, {
+            params: {
+              folder: `/${section.folder}`,
+            },
+          });
 
           const files = res.data;
 
@@ -218,75 +581,31 @@ export default function ProjectsSection() {
 
           return {
             ...section,
-            coverUrl: cover?.url ?? null
+            coverUrl: cover?.url ?? null,
           };
         })
       );
 
       setSections(data);
+
     };
 
     fetchImages();
+
   }, []);
 
-  /* ================= GSAP AUTO SCROLL ================= */
-    // useEffect(() => {
-    //   if (!sections.length) return;
+  /* ================= AUTO SCROLL ================= */
 
-    //   const section = sectionRef.current;
-    //   const track = trackRef.current;
-    //   if (!section || !track) return;
+  useEffect(() => {
 
-    //   const ctx = gsap.context(() => {
+    if (!sections.length) return;
 
-    //     // Because we duplicated content
-    //     const totalWidth = track.scrollWidth / 2;
+    const section = sectionRef.current;
+    const track = trackRef.current;
 
-    //     const tween = gsap.to(track, {
-    //       x: `-=${totalWidth}`,
-    //       duration: 40,
-    //       ease: "none",
-    //       repeat: -1, // ✅ true infinite
-    //       modifiers: {
-    //         x: (x) => {
-    //           const value = parseFloat(x);
-    //           return `${value % totalWidth}px`;
-    //         }
-    //       },
-    //       invalidateOnRefresh: true,
-    //     });
+    if (!section || !track) return;
 
-    //     autoTweenRef.current = tween;
-
-    //     ScrollTrigger.create({
-    //       trigger: section,
-    //       start: "top 90%",
-    //       end: "bottom 10%",
-    //       onEnter: () => tween.play(),
-    //       onEnterBack: () => tween.play(),
-    //       onLeave: () => tween.pause(),
-    //       onLeaveBack: () => tween.pause(),
-    //     });
-
-    //   }, section);
-
-    //   return () => ctx.revert();
-    // }, [sections]);
-
-  // console.log("Section",sections);
-
-/* ================= GSAP AUTO SCROLL ================= */
-useEffect(() => {
-  if (!sections.length) return;
-
-  const section = sectionRef.current;
-  const track = trackRef.current;
-  if (!section || !track) return;
-
-  const totalWidth = track.scrollWidth / 2;
-
-  const startAutoScroll = () => {
-    autoTweenRef.current?.kill();
+    const totalWidth = track.scrollWidth / 2;
 
     autoTweenRef.current = gsap.to(track, {
       x: `-=${totalWidth}`,
@@ -297,135 +616,113 @@ useEffect(() => {
         x: (x) => {
           const value = parseFloat(x);
           return `${value % totalWidth}px`;
-        }
-      }
+        },
+      },
+    });
+
+    ScrollTrigger.create({
+      trigger: section,
+      start: "top 90%",
+      end: "bottom 10%",
+      onEnter: () => autoTweenRef.current?.play(),
+      onEnterBack: () => autoTweenRef.current?.play(),
+      onLeave: () => autoTweenRef.current?.pause(),
+      onLeaveBack: () => autoTweenRef.current?.pause(),
+    });
+
+    return () => {
+      autoTweenRef.current?.kill();
+    };
+
+  }, [sections]);
+
+  /* ================= HOVER PAUSE ================= */
+
+  const handleMouseEnter = () => {
+    autoTweenRef.current?.pause();
+  };
+
+  const handleMouseLeave = () => {
+    autoTweenRef.current?.resume();
+  };
+
+  /* ================= MANUAL ARROWS ================= */
+
+  const scrollByCard = (direction: "left" | "right") => {
+
+    const track = trackRef.current;
+    if (!track) return;
+
+    const firstCard = track.querySelector("article") as HTMLElement | null;
+
+    const cardWidth = firstCard ? firstCard.offsetWidth + 32 : 400;
+
+    const totalWidth = track.scrollWidth / 2;
+    const currentX = (gsap.getProperty(track, "x") as number) || 0;
+
+    let targetX =
+      direction === "left"
+        ? currentX + cardWidth
+        : currentX - cardWidth;
+
+    if (targetX <= -totalWidth) targetX += totalWidth;
+    if (targetX >= 0) targetX -= totalWidth;
+
+    autoTweenRef.current?.kill();
+
+    gsap.to(track, {
+      x: targetX,
+      duration: 1,
+      ease: "power3.out",
+      onComplete: () => {
+
+        autoTweenRef.current = gsap.to(track, {
+          x: `-=${totalWidth}`,
+          duration: 40,
+          ease: "none",
+          repeat: -1,
+          modifiers: {
+            x: (x) => {
+              const value = parseFloat(x);
+              return `${value % totalWidth}px`;
+            },
+          },
+        });
+
+      },
     });
   };
 
-  startAutoScroll();
-
-  ScrollTrigger.create({
-    trigger: section,
-    start: "top 90%",
-    end: "bottom 10%",
-    onEnter: () => autoTweenRef.current?.play(),
-    onEnterBack: () => autoTweenRef.current?.play(),
-    onLeave: () => autoTweenRef.current?.pause(),
-    onLeaveBack: () => autoTweenRef.current?.pause(),
-  });
-
-  return () => {
-    autoTweenRef.current?.kill();
-  };
-
-}, [sections]);
-  /* ================= MANUAL ARROW ================= */
-  // const scrollByCard = (direction: "left" | "right") => {
-  //   const track = trackRef.current;
-  //   if (!track) return;
-
-  //   const firstCard = track.querySelector("article") as HTMLElement | null;
-  //   const cardWidth = firstCard ? firstCard.offsetWidth + 32 : 400;
-
-  //   const currentX = (gsap.getProperty(track, "x") as number) || 0;
-  //   let targetX =
-  //     direction === "left" ? currentX + cardWidth : currentX - cardWidth;
-
-  //   if (targetX > 0) targetX = 0;
-  //   if (targetX < -maxScrollRef.current)
-  //     targetX = -maxScrollRef.current;
-
-  //   autoTweenRef.current?.pause();
-
-  //   gsap.to(track, {
-  //     x: targetX,
-  //     duration: 0.8,
-  //     ease: "power3.out",
-  //   });
-  // };
-
-  /* ================= MANUAL ARROW (INFINITE) ================= */
-const scrollByCard = (direction: "left" | "right") => {
-  const track = trackRef.current;
-  if (!track) return;
-
-  const firstCard = track.querySelector("article") as HTMLElement | null;
-  const cardWidth = firstCard ? firstCard.offsetWidth + 32 : 400;
-
-  const totalWidth = track.scrollWidth / 2;
-  const currentX = (gsap.getProperty(track, "x") as number) || 0;
-
-  let targetX =
-    direction === "left"
-      ? currentX + cardWidth
-      : currentX - cardWidth;
-
-  // Infinite wrap
-  if (targetX <= -totalWidth) targetX += totalWidth;
-  if (targetX >= 0) targetX -= totalWidth;
-
-  // 🔥 Kill current infinite tween completely
-  autoTweenRef.current?.kill();
-
-  // Manual smooth movement
-  gsap.to(track, {
-    x: targetX,
-    duration: 1,
-    ease: "power3.out",
-    onComplete: () => {
-
-      // 🔥 Restart infinite scroll FROM NEW POSITION
-      autoTweenRef.current = gsap.to(track, {
-        x: `-=${totalWidth}`,
-        duration: 40,
-        ease: "none",
-        repeat: -1,
-        modifiers: {
-          x: (x) => {
-            const value = parseFloat(x);
-            return `${value % totalWidth}px`;
-          }
-        }
-      });
-
-    }
-  });
-};
-
   return (
+
     <section
       ref={sectionRef}
       className="py-14 bg-[#f4f4f2] overflow-hidden"
     >
+
       {/* HEADING */}
+
       <div className="max-w-7xl mx-auto px-6 md:px-16 mb-16">
-          <h2 className="font-futura uppercase text-2xl md:text-3xl lg:text-4xl  tracking-[0.08em] text-[#2f2a25]">
-             The{" "}
-             <span className="text-[#2f2a25]">Shi</span>
-             <span className="text-[#c1171a]">ल्प</span>
-           </h2>
+
+        <h2 className="font-futura uppercase text-2xl md:text-3xl lg:text-4xl tracking-[0.08em] text-[#2f2a25]">
+
+          The{" "}
+          <span className="text-[#2f2a25]">Shi</span>
+          <span className="text-[#c1171a]">ल्प</span>
+
+        </h2>
+
       </div>
 
       <div className="relative">
 
-      {/* LEFT ARROW */}
-      <button
-        type="button"
-        onClick={() => scrollByCard("left")}
-        className="
-          hidden lg:flex
-          absolute
-          left-8 md:left-12 lg:left-20
-          top-1/2 -translate-y-1/2
-          z-30
-          items-center justify-center
-          text-gray-200
-           hover:text-[#2f2a25]
-          transition-colors duration-300
-        "
-        aria-label="Previous projects"
-      >
-        <svg
+        {/* LEFT ARROW */}
+
+        <button
+          onClick={() => scrollByCard("left")}
+          className="hidden lg:flex absolute left-20 top-1/2 -translate-y-1/2 z-30 items-center justify-center text-gray-200 hover:text-[#2f2a25]"
+        >
+         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -435,26 +732,15 @@ const scrollByCard = (direction: "left" | "right") => {
         >
           <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
         </svg>
-      </button>
+        </button>
 
-      {/* RIGHT ARROW */}
-      <button
-        type="button"
-        onClick={() => scrollByCard("right")}
-        className="
-          hidden lg:flex
-          absolute
-          right-8 md:right-12 lg:right-20
-          top-1/2 -translate-y-1/2
-          z-30
-          items-center justify-center
-          text-gray-200
-          hover:text-[#2f2a25]
-          transition-colors duration-300
-        "
-        aria-label="Next projects"
-      >
-        <svg
+        {/* RIGHT ARROW */}
+
+        <button
+          onClick={() => scrollByCard("right")}
+          className="hidden lg:flex absolute right-20 top-1/2 -translate-y-1/2 z-30 items-center justify-center text-gray-200 hover:text-[#2f2a25]"
+        >
+         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -464,34 +750,40 @@ const scrollByCard = (direction: "left" | "right") => {
         >
           <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5L15.75 12l-7.5 7.5" />
         </svg>
-      </button>
+        </button>
 
         {/* TRACK */}
+
         <div
           ref={trackRef}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
           className="flex gap-8 px-8 md:px-16 lg:px-32"
         >
+
           {[...sections, ...sections].map((section, index) => (
+
             <Link
               key={section.slug + index}
               href={`/products/${section.slug}`}
               className="group flex-shrink-0 w-[85vw] md:w-[50vw] lg:w-[32vw] max-w-[540px]"
             >
+
               <article className="flex flex-col">
 
                 <div className="relative w-full aspect-[16/10] overflow-hidden rounded-sm bg-[#e9e9e7]">
-                  <div className="absolute inset-0 transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.08]">
+
+                  <div className="absolute inset-0 transition-transform duration-[900ms] group-hover:scale-[1.08]">
 
                     {section.coverUrl && (
                       <IKImage
-                        src={section.coverUrl}  
+                        src={section.coverUrl}
                         alt={section.title}
                       />
                     )}
 
                   </div>
 
-                  <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                 </div>
 
                 <h3 className="mt-6 text-[20px] md:text-[24px] font-futura uppercase tracking-wide text-[#3a3a3a] group-hover:text-[#873807] transition-colors text-center">
@@ -499,20 +791,29 @@ const scrollByCard = (direction: "left" | "right") => {
                 </h3>
 
               </article>
+
             </Link>
+
           ))}
 
-          <div className="flex-shrink-0 w-[10vw]" />
         </div>
+
       </div>
 
       <div className="mt-10 flex justify-center">
+
         <Link href="/products">
-                <button className="mt-10 inline-flex items-center justify-center px-12 py-4 rounded-full border border-[#2f2a25] bg-transparent text-[13px] font-futura font-semibold  text-[#2f2a25] transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-[2px] tracking-[0.16em] ">
-                  VIEW ALL PRODUCTS
-                </button>
+
+          <button className="px-12 py-4 rounded-full border border-[#2f2a25] text-[13px] font-futura text-[#2f2a25] tracking-[0.16em] hover:border-2 font-semibold">
+
+            VIEW ALL PRODUCTS
+
+          </button>
+
         </Link>
+
       </div>
+
     </section>
   );
 }
