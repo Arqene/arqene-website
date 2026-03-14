@@ -4,9 +4,23 @@ import { FaXTwitter } from "react-icons/fa6";
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useRef } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
 
+  const pathname = usePathname();
+  const handleScrollTop = (
+  e: React.MouseEvent<HTMLAnchorElement>,
+  path: string
+) => {
+  if (pathname === path) {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+};
   const [openSocial, setOpenSocial] = useState(false);
   const socialRef = useRef<HTMLDivElement>(null);
 
@@ -98,13 +112,33 @@ export default function Footer() {
           {/* <div className="flex gap-6 text-sm"> */}
         
 
-         <Link href="/legal?tab=privacy" className="hover:underline">
-  Privacy Policy <br />
-</Link>
+    <div className="text-right space-y-1 text-sm">
 
-<Link href="/legal?tab=terms" className="hover:underline">
-  Terms & Conditions
-</Link>
+  <Link
+    href="/legal/privacy"
+    onClick={(e) => handleScrollTop(e, "/legal/privacy")}
+    className={`block transition ${
+      pathname === "/legal/privacy"
+        ? "underline font-medium"
+        : "hover:underline"
+    }`}
+  >
+    Privacy Policy
+  </Link>
+
+  <Link
+    href="/legal/terms"
+    onClick={(e) => handleScrollTop(e, "/legal/terms")}
+    className={`block transition ${
+      pathname === "/legal/terms"
+        ? "underline font-medium"
+        : "hover:underline"
+    }`}
+  >
+    Terms & Conditions
+  </Link>
+
+</div>
 
          
         {/* </div> */}
