@@ -152,7 +152,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   return (
     <div
       ref={containerRef}
-      className="fixed right-0  top-1/2 md:top-20/46 -translate-y-1/2 z-50 flex items-center"
+      className="fixed right-0  top-20/46 -translate-y-1/2 z-50 flex items-center"
     >
       {/* ===================== */}
       {/* CONNECT BUTTON */}
