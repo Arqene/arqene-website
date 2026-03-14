@@ -79,7 +79,7 @@ export default function LegalLayout({
 
         </div>
 
-        <div className="bg-white p-12 shadow-sm text-[16px] leading-8 text-[#5f5a50] space-y-12">
+        <div className="bg-white  p-6 md:p-12  shadow-sm text-[16px] leading-8 text-[#5f5a50] space-y-12">
           {children}
         </div>
 

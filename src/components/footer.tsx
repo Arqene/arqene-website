@@ -1,10 +1,9 @@
 "use client";
-import { FaInstagram, FaFacebookF } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
-import Link from "next/link";
 import Image from "next/image";
-import { useState, useRef } from "react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useRef, useState } from "react";
+import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 export default function Footer() {
 
@@ -170,7 +169,7 @@ export default function Footer() {
 
     <div className="flex justify-center gap-8 text-xl">
 
-      <Link href="https://instagram.com/arqene">
+      <Link href="https://www.instagram.com/arqene.india/" target="_blank">
         <FaInstagram className="hover:opacity-70 transition" />
       </Link>
 
@@ -178,8 +177,8 @@ export default function Footer() {
         <FaFacebookF className="hover:opacity-70 transition" />
       </Link>
 
-      <Link href="https://x.com/arqene">
-        <FaXTwitter className="hover:opacity-70 transition" />
+      <Link href="https://www.linkedin.com/company/arqene-india/" target="_blank">
+        <FaLinkedin className="hover:opacity-70 transition" />
       </Link>
 
     </div>

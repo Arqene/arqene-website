@@ -146,7 +146,7 @@ This privacy policy is subjected to occasional revision, and if we make any subs
 </p>
 </section>
 
-<section className="mt-10">
+<section className="mt-10 p-1">
 
 <h2 className="text-xl font-semibold mb-6">
 Cookie category consent settings
@@ -155,16 +155,15 @@ Cookie category consent settings
 <div className="w-full overflow-hidden rounded-sm">
 
 {/* ROW */}
+<div className="grid grid-cols-1 md:grid-cols-12 bg-[#e8e6e3] border-b border-[#d6d3ce]">
 
-<div className="grid grid-cols-12 bg-[#e8e6e3] border-b border-[#d6d3ce]">
-
-<div className="col-span-3 p-8 text-[#3b342c]">
+<div className="md:col-span-3 p-5 md:p-8 text-[#3b342c] font-medium">
 Strictly necessary
 </div>
 
-<div className="col-span-2 p-8"></div>
+<div className="md:col-span-2 p-5 md:p-8"></div>
 
-<div className="col-span-7 p-8 text-[#3b342c] leading-relaxed">
+<div className="md:col-span-7 p-5 md:p-8 text-[#3b342c] leading-relaxed">
 Strictly necessary cookies help make a website navigable by activating basic
 functions such as page navigation and access to secure website areas.
 Without these cookies, the website would not be able to work properly.
@@ -174,14 +173,13 @@ Without these cookies, the website would not be able to work properly.
 
 
 {/* ROW */}
+<div className="grid grid-cols-1 md:grid-cols-12 bg-[#f2f1ef] border-b border-[#d6d3ce]">
 
-<div className="grid grid-cols-12 bg-[#f2f1ef] border-b border-[#d6d3ce]">
-
-<div className="col-span-3 p-8 text-[#3b342c]">
+<div className="md:col-span-3 p-5 md:p-8 text-[#3b342c] font-medium">
 Functional
 </div>
 
-<div className="col-span-2 p-8 flex items-center">
+<div className="md:col-span-2 p-5 md:p-8 flex md:justify-center">
 
 <label className="relative inline-flex items-center cursor-pointer">
 
@@ -192,20 +190,15 @@ onChange={()=>setFunctional(!functional)}
 className="sr-only peer"
 />
 
-<div className="w-12 h-6 bg-[#cfcfcf] rounded-full
-peer peer-checked:bg-[#2f2a25]
-transition-colors duration-300"></div>
+<div className="w-12 h-6 bg-[#cfcfcf] rounded-full peer peer-checked:bg-[#2f2a25] transition-colors duration-300"></div>
 
-<div className="absolute left-[3px] top-[3px]
-w-5 h-5 bg-white rounded-full
-transition-transform duration-300
-peer-checked:translate-x-6"></div>
+<div className="absolute left-[3px] top-[3px] w-5 h-5 bg-white rounded-full transition-transform duration-300 peer-checked:translate-x-6"></div>
 
 </label>
 
 </div>
 
-<div className="col-span-7 p-8 text-[#3b342c] leading-relaxed">
+<div className="md:col-span-7 p-5 md:p-8 text-[#3b342c] leading-relaxed">
 Functional cookies make it possible to save information that changes the way
 the website appears or acts. For instance your preferred language or region.
 </div>
@@ -214,14 +207,13 @@ the website appears or acts. For instance your preferred language or region.
 
 
 {/* ROW */}
+<div className="grid grid-cols-1 md:grid-cols-12 bg-[#e8e6e3] border-b border-[#d6d3ce]">
 
-<div className="grid grid-cols-12 bg-[#e8e6e3] border-b border-[#d6d3ce]">
-
-<div className="col-span-3 p-8 text-[#3b342c]">
+<div className="md:col-span-3 p-5 md:p-8 text-[#3b342c] font-medium">
 Statistical
 </div>
 
-<div className="col-span-2 p-8 flex items-center">
+<div className="md:col-span-2 p-5 md:p-8 flex md:justify-center">
 
 <label className="relative inline-flex items-center cursor-pointer">
 
@@ -232,20 +224,15 @@ onChange={()=>setStatistical(!statistical)}
 className="sr-only peer"
 />
 
-<div className="w-12 h-6 bg-[#cfcfcf] rounded-full
-peer peer-checked:bg-[#2f2a25]
-transition-colors duration-300"></div>
+<div className="w-12 h-6 bg-[#cfcfcf] rounded-full peer peer-checked:bg-[#2f2a25] transition-colors duration-300"></div>
 
-<div className="absolute left-[3px] top-[3px]
-w-5 h-5 bg-white rounded-full
-transition-transform duration-300
-peer-checked:translate-x-6"></div>
+<div className="absolute left-[3px] top-[3px] w-5 h-5 bg-white rounded-full transition-transform duration-300 peer-checked:translate-x-6"></div>
 
 </label>
 
 </div>
 
-<div className="col-span-7 p-8 text-[#3b342c] leading-relaxed">
+<div className="md:col-span-7 p-5 md:p-8 text-[#3b342c] leading-relaxed">
 Statistical cookies help the website owner understand how visitors interact
 with the website by collecting and reporting information.
 </div>
@@ -254,14 +241,13 @@ with the website by collecting and reporting information.
 
 
 {/* ROW */}
+<div className="grid grid-cols-1 md:grid-cols-12 bg-[#f2f1ef] border-b border-[#d6d3ce]">
 
-<div className="grid grid-cols-12 bg-[#f2f1ef] border-b border-[#d6d3ce]">
-
-<div className="col-span-3 p-8 text-[#3b342c]">
+<div className="md:col-span-3 p-5 md:p-8 text-[#3b342c] font-medium">
 Marketing
 </div>
 
-<div className="col-span-2 p-8 flex items-center">
+<div className="md:col-span-2 p-5 md:p-8 flex md:justify-center">
 
 <label className="relative inline-flex items-center cursor-pointer">
 
@@ -272,20 +258,15 @@ onChange={()=>setMarketing(!marketing)}
 className="sr-only peer"
 />
 
-<div className="w-12 h-6 bg-[#cfcfcf] rounded-full
-peer peer-checked:bg-[#2f2a25]
-transition-colors duration-300"></div>
+<div className="w-12 h-6 bg-[#cfcfcf] rounded-full peer peer-checked:bg-[#2f2a25] transition-colors duration-300"></div>
 
-<div className="absolute left-[3px] top-[3px]
-w-5 h-5 bg-white rounded-full
-transition-transform duration-300
-peer-checked:translate-x-6"></div>
+<div className="absolute left-[3px] top-[3px] w-5 h-5 bg-white rounded-full transition-transform duration-300 peer-checked:translate-x-6"></div>
 
 </label>
 
 </div>
 
-<div className="col-span-7 p-8 text-[#3b342c] leading-relaxed">
+<div className="md:col-span-7 p-5 md:p-8 text-[#3b342c] leading-relaxed">
 Marketing cookies are used to track visitors across websites. The intention
 is to display ads that are relevant and interesting to the individual user
 and thus more valuable for publishers and third-party advertisers.
@@ -295,16 +276,15 @@ and thus more valuable for publishers and third-party advertisers.
 
 
 {/* ROW */}
+<div className="grid grid-cols-1 md:grid-cols-12 bg-[#e8e6e3]">
 
-<div className="grid grid-cols-12 bg-[#e8e6e3]">
-
-<div className="col-span-3 p-8 text-[#3b342c]">
+<div className="md:col-span-3 p-5 md:p-8 text-[#3b342c] font-medium">
 Unclassified
 </div>
 
-<div className="col-span-2 p-8"></div>
+<div className="md:col-span-2 p-5 md:p-8"></div>
 
-<div className="col-span-7 p-8 text-[#3b342c] leading-relaxed">
+<div className="md:col-span-7 p-5 md:p-8 text-[#3b342c] leading-relaxed">
 We are in the process of classifying unclassified cookies together with the
 providers of the individual cookies.
 </div>
