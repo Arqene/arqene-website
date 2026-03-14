@@ -3,7 +3,7 @@ export default function TermsPage() {
    <>
 <section>
 <h2 className="text-xl font-semibold mb-3">
-Welcome to arqené!
+Welcome to arqen<span className="text-red-600">é</span>!
 </h2>
 
 <p>

@@ -174,7 +174,7 @@ export default function Footer() {
         <FaInstagram className="hover:opacity-70 transition" />
       </Link>
 
-      <Link href="https://facebook.com/arqene">
+      <Link href="https://www.facebook.com/arqene.india/" target="_blank">
         <FaFacebookF className="hover:opacity-70 transition" />
       </Link>
 
