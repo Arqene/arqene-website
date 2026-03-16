@@ -192,7 +192,7 @@ className="sr-only peer"
 
 <div className="w-12 h-6 bg-[#cfcfcf] rounded-full peer peer-checked:bg-[#2f2a25] transition-colors duration-300"></div>
 
-<div className="absolute left-[3px] top-[3px] w-5 h-5 bg-white rounded-full transition-transform duration-300 peer-checked:translate-x-6"></div>
+<div className="absolute left-[3px] top-[4px] w-5 h-5 bg-white rounded-full transition-transform duration-300 peer-checked:translate-x-6"></div>
 
 </label>
 
@@ -226,7 +226,7 @@ className="sr-only peer"
 
 <div className="w-12 h-6 bg-[#cfcfcf] rounded-full peer peer-checked:bg-[#2f2a25] transition-colors duration-300"></div>
 
-<div className="absolute left-[3px] top-[3px] w-5 h-5 bg-white rounded-full transition-transform duration-300 peer-checked:translate-x-6"></div>
+<div className="absolute left-[3px] top-[4px] w-5 h-5 bg-white rounded-full transition-transform duration-300 peer-checked:translate-x-6"></div>
 
 </label>
 
@@ -260,7 +260,7 @@ className="sr-only peer"
 
 <div className="w-12 h-6 bg-[#cfcfcf] rounded-full peer peer-checked:bg-[#2f2a25] transition-colors duration-300"></div>
 
-<div className="absolute left-[3px] top-[3px] w-5 h-5 bg-white rounded-full transition-transform duration-300 peer-checked:translate-x-6"></div>
+<div className="absolute left-[3px] top-[4px] w-5 h-5 bg-white rounded-full transition-transform duration-300 peer-checked:translate-x-6"></div>
 
 </label>
 
