@@ -217,8 +217,6 @@ the website appears or acts. For instance your preferred language or region.
 Statistical
 </div>
 
-<div className="md:col-span-2 p-5 md:p-8 flex md:justify-center">
-
 <div className="md:col-span-2 p-5 md:p-8 flex items-center md:justify-center">
 
 <label className="relative inline-flex items-center cursor-pointer">
@@ -226,7 +224,7 @@ Statistical
 <input
 type="checkbox"
 checked={statistical}
-onChange={()=>setFunctional(!statistical)}
+onChange={() => setStatistical(!statistical)}
 className="sr-only peer"
 />
 
@@ -238,15 +236,11 @@ className="sr-only peer"
 
 </div>
 
-</div>
-
 <div className="md:col-span-7 p-5 md:p-8 text-[#3b342c] leading-relaxed">
-Statistical cookies help the website owner understand how visitors interact
-with the website by collecting and reporting information.
+Statistical cookies help the website owner understand how visitors interact with the website by collecting and reporting information.
 </div>
 
 </div>
-
 
 {/* ROW */}
 <div className="grid grid-cols-1 md:grid-cols-12 bg-[#f2f1ef] border-b border-[#d6d3ce]">
@@ -255,8 +249,6 @@ with the website by collecting and reporting information.
 Marketing
 </div>
 
-<div className="md:col-span-2 p-5 md:p-8 flex md:justify-center">
-
 <div className="md:col-span-2 p-5 md:p-8 flex items-center md:justify-center">
 
 <label className="relative inline-flex items-center cursor-pointer">
@@ -264,7 +256,7 @@ Marketing
 <input
 type="checkbox"
 checked={marketing}
-onChange={()=>setFunctional(!marketing)}
+onChange={() => setMarketing(!marketing)}
 className="sr-only peer"
 />
 
@@ -276,12 +268,8 @@ className="sr-only peer"
 
 </div>
 
-</div>
-
 <div className="md:col-span-7 p-5 md:p-8 text-[#3b342c] leading-relaxed">
-Marketing cookies are used to track visitors across websites. The intention
-is to display ads that are relevant and interesting to the individual user
-and thus more valuable for publishers and third-party advertisers.
+Marketing cookies are used to track visitors across websites. The intention is to display ads that are relevant and interesting to the individual user and thus more valuable for publishers and third-party advertisers.
 </div>
 
 </div>
