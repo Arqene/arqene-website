@@ -181,6 +181,8 @@ Functional
 
 <div className="md:col-span-2 p-5 md:p-8 flex md:justify-center">
 
+<div className="md:col-span-2 p-5 md:p-8 flex items-center md:justify-center">
+
 <label className="relative inline-flex items-center cursor-pointer">
 
 <input
@@ -190,11 +192,13 @@ onChange={()=>setFunctional(!functional)}
 className="sr-only peer"
 />
 
-<div className="w-12 h-6 bg-[#cfcfcf] rounded-full peer peer-checked:bg-[#2f2a25] transition-colors duration-300"></div>
+<div className="w-12 h-6 bg-[#cfcfcf] rounded-full transition-colors duration-300 peer-checked:bg-[#2f2a25]"></div>
 
-<div className="absolute left-[3px] top-[4px] w-5 h-5 bg-white rounded-full transition-transform duration-300 peer-checked:translate-x-6"></div>
+<div className="absolute left-[2px] top-[2px] w-5 h-5 bg-white rounded-full shadow transition-transform duration-300 peer-checked:translate-x-6"></div>
 
 </label>
+
+</div>
 
 </div>
 
@@ -215,20 +219,24 @@ Statistical
 
 <div className="md:col-span-2 p-5 md:p-8 flex md:justify-center">
 
+<div className="md:col-span-2 p-5 md:p-8 flex items-center md:justify-center">
+
 <label className="relative inline-flex items-center cursor-pointer">
 
 <input
 type="checkbox"
 checked={statistical}
-onChange={()=>setStatistical(!statistical)}
+onChange={()=>setFunctional(!statistical)}
 className="sr-only peer"
 />
 
-<div className="w-12 h-6 bg-[#cfcfcf] rounded-full peer peer-checked:bg-[#2f2a25] transition-colors duration-300"></div>
+<div className="w-12 h-6 bg-[#cfcfcf] rounded-full transition-colors duration-300 peer-checked:bg-[#2f2a25]"></div>
 
-<div className="absolute left-[3px] top-[4px] w-5 h-5 bg-white rounded-full transition-transform duration-300 peer-checked:translate-x-6"></div>
+<div className="absolute left-[2px] top-[2px] w-5 h-5 bg-white rounded-full shadow transition-transform duration-300 peer-checked:translate-x-6"></div>
 
 </label>
+
+</div>
 
 </div>
 
@@ -249,20 +257,24 @@ Marketing
 
 <div className="md:col-span-2 p-5 md:p-8 flex md:justify-center">
 
+<div className="md:col-span-2 p-5 md:p-8 flex items-center md:justify-center">
+
 <label className="relative inline-flex items-center cursor-pointer">
 
 <input
 type="checkbox"
 checked={marketing}
-onChange={()=>setMarketing(!marketing)}
+onChange={()=>setFunctional(!marketing)}
 className="sr-only peer"
 />
 
-<div className="w-12 h-6 bg-[#cfcfcf] rounded-full peer peer-checked:bg-[#2f2a25] transition-colors duration-300"></div>
+<div className="w-12 h-6 bg-[#cfcfcf] rounded-full transition-colors duration-300 peer-checked:bg-[#2f2a25]"></div>
 
-<div className="absolute left-[3px] top-[4px] w-5 h-5 bg-white rounded-full transition-transform duration-300 peer-checked:translate-x-6"></div>
+<div className="absolute left-[2px] top-[2px] w-5 h-5 bg-white rounded-full shadow transition-transform duration-300 peer-checked:translate-x-6"></div>
 
 </label>
+
+</div>
 
 </div>
 
