@@ -504,17 +504,101 @@ export default function TermsPage() {
       <h3 className="text-lg font-semibold mt-6">7. COPYRIGHTS IN CONTENT</h3>
 
       <p>
-        7.1. The <Brand /> Platform contains material, including text, graphics and
-        sound, which is protected by copyright and/or other intellectual
-        property rights [“Arqene (or <Brand /> or <Brand />) Content”]. All copyright
-        and other intellectual property rights in the <Brand /> Content are either
-        owned by us or have been licensed to us by the owner(s) of those rights
-        so that it can use the <Brand /> Content as part of <Brand /> Platform. We
-        retain copyright on all Information, including text, graphics and sound
-        and all trademarks displayed on the <Brand /> Platform are either owned
-        by or licensed to us
+        7.1. The <Brand /> Platform contains material, including text, graphics
+        and sound, which is protected by copyright and/or other intellectual
+        property rights [“Arqene (or <Brand /> or <Brand />) Content”]. All
+        copyright and other intellectual property rights in the <Brand />{" "}
+        Content are either owned by us or have been licensed to us by the
+        owner(s) of those rights so that it can use the <Brand /> Content as
+        part of <Brand /> Platform. We retain copyright on all Information,
+        including text, graphics and sound and all trademarks displayed on the{" "}
+        <Brand /> Platform are either owned by or licensed to us
+      </p>
+      <p>
+        7.2. You may use and display the <Brand /> Content on your personal
+        computer only for your personal use subject to the grant of a limited,
+        revocable, personal, non-exclusive and non-transferable license to you
+        by us when you register on the <Brand /> Platform, only for identifying
+        Products, carrying out purchases of Products and for using and printing
+        copies of the information on the <Brand /> Platform for your personal
+        use and store the files on your computer for personal use only and not
+        for business purposes
+      </p>
+      <h4>7.3 You may not:</h4>
+      <p>
+        7.3.1. copy (whether by printing off onto paper, storing on disk,
+        downloading or in any other way), distribute (including distributing
+        copies), download, display, perform, reproduce, distribute, modify,
+        edit, alter, enhance, broadcast or tamper within any way or otherwise
+        use any <Brand /> Content contained in the <Brand /> Platform. These
+        restrictions apply in relation to all or part of the <Brand /> Content
+        available on the <Brand /> Platform;
+      </p>
+      <p>
+        7.3.2. copy and distribute the Information on any other server, or
+        modify or re-use text or graphics on this system or another system
       </p>
 
+      <p>
+        7.3.3. reproduce any part of the <Brand /> Platform or sell or
+        distribute the same for commercial gain nor shall it be modified or
+        incorporated in any other work, publication or web site, whether in hard
+        copy or electronic format, including postings to any other web site;
+      </p>
+
+      <p>
+        7.3.4. remove any copyright, trademark or other intellectual property
+        notices contained in the original material from any material copied or
+        printed off from <Brand /> Platform; or
+      </p>
+
+      <p>
+        7.3.5. link any other material to the <Brand /> Platform, without our
+        express written consent.
+      </p>
+
+      <p>7.4. The license granted to you does not include a license for:</p>
+
+      <p>
+        7.4.1. resale of Products or commercial use of the <Brand /> Platform or{" "}
+        <Brand /> Content,
+      </p>
+
+      <p>
+        7.4.2. any collection and use of product listings, description, or
+        prices,
+      </p>
+
+      <p>
+        7.4.3. any use of <Brand /> Platform, the Services and/or of <Brand />{" "}
+        Content other than as contemplated in these Terms of Use,
+      </p>
+
+      <p>7.4.4. any downloading or copying of login credentials of user,</p>
+
+      <p>
+        7.4.5. any use of data mining, robots, or similar data gathering and
+        extraction tools to extract (whether once or many times) any parts of{" "}
+        <Brand /> Platform, and
+      </p>
+
+      <p>
+        7.4.6. creating and/or publishing your own database that features parts
+        of the <Brand /> Platform.
+      </p>
+
+      <p>
+        7.5. If you believe that your intellectual property rights have been
+        used in a way that raises concerns of infringement, please write to us
+        at{" "}
+        <a
+          className="text-red-600 underline ml-1"
+          href="mailto:info@arqene.com"
+        >
+          info@arqene.com
+        </a>{" "}
+        and let us know of your concerns.
+      </p>
       <h3 className="text-lg font-semibold mt-6">8. TRADEMARKS</h3>
 
       <p>
@@ -525,21 +609,196 @@ export default function TermsPage() {
       <h3 className="text-lg font-semibold mt-6">
         9. LICENSE AND USE OF YOUR CONTENT
       </h3>
+      <p>
+        9.1. You grant to us a royalty-free, perpetual, irrevocable,
+        non-exclusive right and license to adopt, publish, reproduce,
+        disseminate, transmit, distribute, copy, use, create derivative works
+        from, display worldwide, or act on any material posted by you on the
+        platform without additional approval or consideration in any form,
+        media, or technology now known or later developed, for the full term of
+        any rights that may exist in such content, and you waive any claim over
+        all feedback, comments, ideas or suggestions or any other content
+        provided through or on the <Brand /> Platform.You agree to perform all
+        further acts necessary to perfect any of the above rights granted by you
+        to us, including the execution of deeds and documents, at its request.
+      </p>
 
       <p>
-        You grant us a royalty‑free, perpetual, irrevocable and non‑exclusive
-        right to use content or material posted by you on the platform for
-        operational, promotional or service purposes.
+        9.2. You agree that we do not routinely monitor your postings on the{" "}
+        <Brand /> Platform but reserve the right to do so. However, if we become
+        aware of inappropriate use of <Brand /> Platform or any of its Services,
+        we will respond in any way that, in its sole discretion, we deem
+        appropriate.You acknowledge that we will have the right to report to law
+        enforcement authorities of any actions that may be considered illegal,
+        as well as any information it receives of such illegal conduct. When
+        requested, we will co-operate fully with law enforcement agencies in any
+        investigation of alleged illegal activity on the internet.
+      </p>
+
+      <p>
+        9.3. Submissions and unauthorized use of any materials contained on the{" "}
+        <Brand /> Platform may violate copyright laws, trademark laws, the laws
+        of privacy and publicity, certain communications statutes and
+        regulations and other applicable laws and regulations.You alone are
+        responsible for your actions or the actions of any person using your
+        username and/or password.As such, you shall indemnify and hold us and
+        our officers, directors, employees, affiliates, agents, licensors, and
+        business partners harmless from and against any and all loss, costs,
+        damages, liabilities, and expenses (including attorneys' fees) incurred
+        in relation to, arising from, or for the purpose of avoiding, any claim
+        or demand from a third party that your use of the platform or the use of
+        the platform by any person using your username and/or password
+        (including without limitation your participation in the posting areas or
+        your Submissions) violates any applicable law or regulation, or the
+        rights of any third party.
+      </p>
+
+      <p>
+        9.4. We reserve the right to terminate access to this platform at any
+        time and without notice.Further, this limited license terminates
+        automatically, without notice to you, if you breach any of these Terms
+        of Use.Upon termination, you must immediately destroy any downloaded and
+        printed materials. Any provision of the Terms of Use which imposes an
+        obligation or creates a right that by its nature will be valid after
+        termination or expiration of the Terms of Use shall survive the
+        termination or expiration of the Terms of Use.You grant us a
+        royalty‑free, perpetual, irrevocable and non‑exclusive right to use
+        content or material posted by you on the platform for operational,
+        promotional or service purposes.
       </p>
 
       <h3 className="text-lg font-semibold mt-6">
         10. USER WARRANTIES AND RESTRICTIONS
       </h3>
 
+      <p>10.1. You represent and warrant that:</p>
+
       <p>
-        You represent that your use of the platform will not violate any
-        applicable law or regulation and that all information submitted by you
-        is accurate and lawful.
+        10.1.1. your use of <Brand /> Platform and/or Services will not violate
+        any applicable law or regulation;
+      </p>
+
+      <p>
+        10.1.2. all information that is submitted to us in connection with{" "}
+        <Brand /> Platform and/or Services is true, accurate and lawful;
+      </p>
+
+      <p>
+        10.1.3. use of the content and material you supply does not breach any
+        applicable Agreement and will not cause injury to any person or entity
+        (including that the content or material is not defamatory).If at any
+        time, the information provided by you is found to be false or
+        inaccurate, we will have the right to reject registration, cancel all
+        orders, and restrict you from using the Services and other affiliated
+        services in the future without any prior intimation whatsoever.You agree
+        to indemnify us and our affiliates for all claims brought by a third
+        party against it or its affiliates arising out of or in connection with
+        a breach of any of these warranties.
+      </p>
+
+      <p>
+        10.2. You will use <Brand /> Platform for lawful purposes only and will
+        not undertake any activity that is harmful to <Brand /> Platform or its
+        content or otherwise not envisaged through the <Brand /> Platform.You
+        have a limited license to access and use <Brand /> Platform, solely for
+        the purpose of availing the Services, subject to these Terms of Use.
+      </p>
+
+      <h5>10.3. You will not do any of the following:</h5>
+
+      <p>
+        10.3.1. Delete or modify any content on <Brand /> Platform, such as any
+        information regarding the Services, their performance, sales or pricing;
+      </p>
+
+      <p>
+        10.3.2. Use any engine, software, tool, agent or other mechanism (such
+        as spiders, robots, avatars, worms, time bombs etc.) to navigate or
+        search <Brand /> Platform;
+      </p>
+
+      <p>10.3.3. Make false or malicious statements against the Services;</p>
+
+      <p>
+        10.3.4. Post, copy, submit, upload, distribute, or otherwise transmit or
+        make available any software or other computer files that contain a virus
+        or other harmful component, or otherwise disrupt or damage <Brand />{" "}
+        Platform and/or Services or any connected network, or otherwise
+        interfere with any person or entity’s use or enjoyment of <Brand />{" "}
+        Platform and/or the Services;
+      </p>
+
+      <p>
+        10.3.5. Introduce any trojans, viruses, any other malicious software,
+        any bots or <Brand /> Platform for any information;
+      </p>
+
+      <p>
+        10.3.6. Probe, scan, or test the vulnerability of any system, security
+        or authentication measures implemented by us or otherwise tamper or
+        attempt to tamper with our technological design and architecture;
+      </p>
+
+      <p>
+        10.3.7. Hack into or introduce malicious software of any kind onto{" "}
+        <Brand /> Platform;
+      </p>
+
+      <p>
+        10.3.8. Gain unauthorized access to, or interfere with, or damage, or
+        disrupt the server on which the details connected to the Services are
+        stored, or any other server, computer, or database connected to the
+        Services; or
+      </p>
+
+      <p>
+        10.3.9. Engage in any form of antisocial, disruptive, or destructive
+        acts, including “flaming,” “spamming,” “flooding,” “trolling,”
+        “phishing” and “griefing” as those terms are commonly understood and
+        used on the internet.
+      </p>
+
+      <h5>
+        10.4. You are prohibited from hosting, displaying, uploading, modifying,
+        publishing, transmitting, updating or sharing on or through <Brand />{" "}
+        Platform, any information that:
+      </h5>
+
+      <p>
+        10.4.1. belongs to another person and to which you do not have any
+        right;
+      </p>
+
+      <p>
+        10.4.2. is harmful, harassing, blasphemous, defamatory, obscene,
+        pornographic, pedophilic, invasive of another’s privacy, hateful,
+        relating to or encouraging money laundering or gambling, or otherwise
+        harmful in any manner whatsoever;
+      </p>
+
+      <p>10.4.3. harms minors in any way;</p>
+
+      <p>
+        10.4.4. infringes any patent, trademark, copyright or other proprietary
+        rights;
+      </p>
+
+      <p>10.4.5. violates any law for the time being in force;</p>
+
+      <p>
+        10.4.6. deceives or misleads the addressee about the origin of such
+        messages or communicates any information which is grossly offensive or
+        menacing in nature;
+      </p>
+
+      <p>10.4.7. impersonates or defames another person; or</p>
+
+      <p>
+        10.4.8. contains software viruses or any other computer code, files or
+        programs designed to interrupt, destroy or limit the functionality of
+        any computer resource.You represent that your use of the platform will
+        not violate any applicable law or regulation and that all information
+        submitted by you is accurate and lawful.
       </p>
 
       <h3 className="text-lg font-semibold mt-6">
@@ -547,9 +806,17 @@ export default function TermsPage() {
       </h3>
 
       <p>
-        You agree to indemnify and hold harmless Arqene Designs Pvt. Limited and
-        its affiliates, officers, employees and partners from any claims arising
-        from your use of the platform.
+        11.1. You agree to indemnify, defend and hold harmless us, our
+        affiliates, officers, directors, employees, consultants, licensors,
+        agents, and representatives from and against any and all third- party
+        claims, losses, liabilities, damages, and/or costs (including reasonable
+        attorney fees and costs) arising from your access to or use of <Brand />
+        Platform or the Services, violation of these Terms of Use, or
+        infringement of any of our or any third-party intellectual property or
+        other rights. We will notify you promptly of any such claim, loss,
+        liability, or demand, and in addition to the foregoing, you agree to
+        provide us with reasonable assistance, at your expense, in defending any
+        such claim, loss, liability, damage, or cost.
       </p>
 
       <h3 className="text-lg font-semibold mt-6">
@@ -557,12 +824,23 @@ export default function TermsPage() {
       </h3>
 
       <p>
-        These Terms of Use are governed by the laws of India and disputes shall
-        be subject to the jurisdiction of courts located at Gurugram, Haryana.
+        12.1. These Terms of Use are governed by and to be interpreted in
+        accordance with laws of India, without regard to the choice or conflicts
+        of law provisions of any jurisdiction. You agree, in the event of any
+        dispute arising in relation to these Terms of Use or any dispute arising
+        in relation to the <Brand /> Platform whether in contract or tort or
+        otherwise, to submit to the jurisdiction of the courts located at
+        Gurugram, Haryana, India for the resolution of all such disputes.
       </p>
 
       <h3 className="text-lg font-semibold mt-6">13. GRIEVANCE OFFICER</h3>
-
+      <p>
+        13.1. In accordance with the applicable law, any grievances which you
+        may have with respect to the information shared by you with us hereunder
+        and its treatment or any grievance related to Services being availed
+        hereunder, may be directed by you to such grievance officer at the below
+        mentioned coordinate:
+      </p>
       <p>
         <strong>Name:</strong> Mehul Singhal
       </p>
@@ -609,100 +887,151 @@ export default function TermsPage() {
         time without prior notice.
       </p>
 
-      <h3 className="text-lg font-semibold mt-6">18. MISCELLANEOUS</h3>
+       <h3 className="text-lg font-semibold mt-6">18. MISCELLANEOUS</h3>
 
       <p>
-        These Terms supersede all previous oral and written agreements relating
-        to the use of the platform.
+        <strong>18.1.</strong> In addition to these Terms of Use, you will also ensure that you are in compliance with the terms and conditions of the third parties, such as bank offers terms and conditions, brand promotional offers, whose links, if any, are contained/embedded in the Services. You agree that we will not be liable for any transaction between itself and any such third parties.
       </p>
 
-      <h2 className="text-xl font-semibold mt-10">
-        PART B – TERMS AND CONDITIONS OF SALE ON <Brand /> PLATFORM
-      </h2>
+      <p>
+        <strong>18.2.</strong> These Terms of Use supersede all previous oral and written terms and conditions (if any) communicated to you by us, for the use of <Brand /> Platform, and the rights and liabilities with respect to any Services to be provided by us shall be limited to the scope of these Terms of Use.
+      </p>
 
+      {/* PART B */}
+      <h3 className="text-lg font-semibold mt-6">
+        PART B – TERMS AND CONDITIONS OF SALE ON <Brand /> PLATFORM
+      </h3>
+
+      <p>
+        The terms and conditions of sale as set out herein (“Terms of Sale”) constitute an agreement between us and you and govern the terms and conditions on which you purchase your Products from us on or through the platform. By placing an order for any Product with us or making a purchase of Product, you expressly agree to be bound by these Terms of Sale.
+      </p>
+
+      <p>
+        These Terms of Sale are in addition to the Agreement. These Terms of Sale constitute an electronic record within the meaning of the applicable law. This electronic record is generated by a computer system and does not require any physical or digital signatures.
+      </p>
+
+      {/* 1 */}
       <h3 className="text-lg font-semibold mt-6">1. OUR CONTRACT OF SALE</h3>
 
       <p>
-        Listing and display of a Product by us on the platform is an invitation
-        to you to make an offer for purchase. Once you place an order, you will
-        receive an order confirmation email acknowledging receipt of your order.
+        <strong>1.1.</strong> Listing and display of a Product by us on <Brand /> Platform is our invitation to you to make an offer for purchase of such Product. Likewise, the placement of an order on <Brand /> Platform by you is your offer to buy the Product(s) from us.
       </p>
 
+      <p>
+        <strong>1.2.</strong> Once you have placed an order with us for purchase of a Product, you will receive an e-mail and/or mobile confirming receipt of your order and containing the details of your order (the “Order Confirmation”). The Order Confirmation is merely an acknowledgement that we have received your order and does not signify our acceptance of your offer.
+      </p>
+
+      <p>
+        <strong>1.3.</strong> We only accept your offer and conclude the contract of sale for a Product ordered by you, when the Product is shipped or dispatched to you and an e-mail and/or registered mobile number confirmation is sent to you that the Product has been shipped or dispatched to you (the “Shipment Confirmation”). We reserve the right, at our sole discretion, to refuse or cancel any order for any reason whatsoever before sending Shipment Confirmation to you.
+      </p>
+
+      <p>
+        <strong>1.4.</strong> If your order is dispatched in more than one package, you may receive separate Shipment Confirmations for each package, and each Shipment Confirmation and corresponding dispatch will conclude a separate contract of sale between you and us for the Product(s) specified in that Shipment Confirmation.
+      </p>
+
+      <p>
+        <strong>1.5.</strong> Any communication from us shall be sent only to your registered mobile number and/or email address or such other contact number or email address that you may designate, for any particular transaction. You shall be solely responsible to update your registered mobile number and/or email address on the <Brand /> Platform in the event there is a change. Further, we may also send you notifications and reminders with respect to scheduled deliveries of the purchased Products. While we shall make every endeavor to share prompt reminders and notifications relating to the delivery of purchased Product(s) with you, we shall not be held liable for any failure to send such notifications or reminders to you.
+      </p>
+
+      <p>
+        <strong>1.6.</strong> Your contract is with us and you confirm that the Product(s) ordered by you are purchased for your personal purpose and not for re-sale or business purpose. Please note that we sell Products only in quantities which correspond to the usual requirements of an average household. This applies both to the number of Products ordered within a single order and the placing of several orders for the same Product where the individual orders comprise a quantity typical for a normal household.
+      </p>
+
+      <p>
+        <strong>1.7.</strong> All orders placed on <Brand /> Platform are subject to the availability of such Product, our acceptance of your offer as per the above and your continued adherence to these Terms of Sale.
+      </p>
+
+      <p>
+        <strong>1.8.</strong> You hereby authorize us to declare and provide declarations to any governmental authority on request on your behalf, including that the Products ordered by you are for personal, non-commercial use.
+      </p>
+
+      {/* 2 */}
       <h3 className="text-lg font-semibold mt-6">2. PRODUCT AVAILABILITY</h3>
 
       <p>
-        We list availability information for Products on the relevant webpage.
-        Dispatch estimates are not guaranteed.
+        <strong>2.1.</strong> We list availability information for the Products on the relevant webpage of <Brand /> Platform. Beyond what we say on that webpage or otherwise on <Brand /> Platform, we cannot be more specific about availability. Please note that dispatch estimates are not guaranteed and should not be relied upon as such. As we process your order, you will be informed by e-mail and/or mobile SMS if any Products you order turn out to be unavailable or out of stock.
       </p>
 
+      {/* 3 */}
       <h3 className="text-lg font-semibold mt-6">3. PRODUCT PRICING</h3>
 
       <p>
-        All prices are listed in Indian Rupees and are inclusive of applicable
-        taxes.
+        <strong>3.1.</strong> All prices are listed in Indian Rupees. Price, as displayed, is inclusive of all applicable taxes.
       </p>
 
+      <p>
+        <strong>3.2.</strong> Products in your shopping cart of <Brand /> Platform will reflect the most recent price as displayed on the Product’s information webpage on <Brand /> Platform. Please note that this price may differ from the price shown for the Product when you first placed it in your shopping cart. Placing a Product in your shopping cart does not reserve the price shown at that time. It is also possible that a Product’s price may decrease between the time you place it in your shopping cart and the time you place the order. The prices mentioned at the time of ordering will be the prices charged on the date of the delivery.
+      </p>
+
+      {/* 4 */}
       <h3 className="text-lg font-semibold mt-6">4. LICENSES</h3>
 
       <p>
-        Certain Products may require licenses or permissions under applicable
-        laws and you will be responsible for obtaining them.
+        <strong>4.1.</strong> You acknowledge that there may be licenses/permissions required under the applicable laws to use, purchase or otherwise possess certain Product(s). You will be solely responsible for obtaining such licenses/permissions and complying with the terms of such licenses/permissions.
       </p>
 
+      {/* 5 */}
       <h3 className="text-lg font-semibold mt-6">5. TAXES</h3>
 
       <p>
-        You shall be responsible for payment of all fees, costs and taxes
-        associated with the purchase of Products.
+        <strong>5.1.</strong> You shall be responsible for payment of all fees/costs/charges associated with the purchase of Products from us and you agree to bear any and all applicable taxes.
       </p>
 
+      {/* 6 */}
       <h3 className="text-lg font-semibold mt-6">6. ELIGIBILITY</h3>
 
       <p>
-        Only persons who are 18 years or older and capable of entering legally
-        binding contracts may place orders on the platform.
+        <strong>6.1.</strong> Only persons who can enter into legally binding contracts as per Indian Contract Act, 1872, i.e., persons who are 18 (Eighteen) years of age or older, are of sound mind, and are not disqualified from entering into contracts by any law, can use <Brand /> Platform and place an order with us. If you are a minor i.e., under the age of 18 (Eighteen) years, you may purchase the Product on <Brand /> Platform only with the involvement of a parent or guardian.
       </p>
 
+      {/* 7 */}
       <h3 className="text-lg font-semibold mt-6">7. LIMITATION OF LIABILITY</h3>
 
       <p>
-        Our liability shall not extend beyond the value of the Product purchased
-        through the platform.
+        <strong>7.1.</strong> In no event, our aggregate liability, if any, that is proven and ordered by a court of competent jurisdiction pursuant to a claim by you or person acting on your behalf, shall extend beyond the money charged from you for purchases made pursuant to an order under which such liability has arisen and been established. We will not be responsible for any business loss (including loss of profits, revenue, contracts, anticipated savings, data, goodwill or wasted expenditure) or any other indirect or consequential loss that is not reasonably foreseeable to both you and us when a contract for the sale of Product by us to you was formed.
       </p>
 
+      {/* 8 */}
       <h3 className="text-lg font-semibold mt-6">8. AMENDMENTS</h3>
 
-      <p>We reserve the right to modify these Terms of Sale at any time.</p>
+      <p>
+        <strong>8.1.</strong> We reserve the right to make changes to our policies, and these Terms of Sale at any time. You will be subject to the policies and Terms of Sale in force at the time you order Product from us, unless any change to those policies or these Terms of Sale is required to be made by law or government authority (in which case it will apply to orders previously placed by you). If any of these conditions is deemed invalid, void, or for any reason unenforceable, that condition will be deemed severable and will not affect the validity and enforceability of any remaining condition.
+      </p>
 
+      {/* 9 */}
       <h3 className="text-lg font-semibold mt-6">9. FORCE MAJEURE</h3>
 
       <p>
-        We will not be responsible for delays caused by circumstances beyond our
-        reasonable control.
+        We will not be held responsible for any delay or failure to comply with its obligations if the delay or failure arises from any cause which is beyond our reasonable control.
       </p>
 
+      {/* 10 */}
       <h3 className="text-lg font-semibold mt-6">10. WAIVER</h3>
 
       <p>
-        Failure to enforce any right under these Terms shall not constitute a
-        waiver of such rights.
+        <strong>10.1.</strong> No provision in these Terms of Sale will be deemed waived and no breach excused, unless such waiver or consent is in writing and signed by us. Our consent to, or waiver of your breach, whether expressed or implied, will not constitute consent to, waiver of, or excuse for any other different or subsequent breach.
       </p>
 
+      {/* 11 */}
       <h3 className="text-lg font-semibold mt-6">
         11. GOVERNING LAW AND DISPUTE RESOLUTION
       </h3>
 
       <p>
-        These Terms of Sale shall be governed by the laws of India and disputes
-        shall fall under the jurisdiction of courts in Gurugram, Haryana.
+        <strong>11.1.</strong> These Terms of Sale, all transactions consummated between you and us, and our relationship with you is governed by the laws of India, without reference to any conflict of laws principles and with an exclusive jurisdiction to the courts of Gurugram, Haryana, India.
       </p>
 
+      {/* 12 */}
       <h3 className="text-lg font-semibold mt-6">12. MISCELLANEOUS</h3>
 
       <p>
-        These Terms of Sale supersede all previous oral and written terms
-        relating to the purchase of Products from the platform.
+        <strong>12.1.</strong> In addition to these Terms of Sale, you will also ensure that you are in compliance with the terms and conditions of the third parties, such as bank offers terms and conditions, brand promotional offers, whose links, if any, are contained/embedded in the Terms of Use.
       </p>
+
+      <p>
+        <strong>12.2.</strong> These Terms of Sale supersede all previous oral and written terms and conditions (if any) communicated to you by us, for the purchase of Product.
+      </p>
+
     </div>
   );
 }
