@@ -45,7 +45,7 @@ export default function Footer() {
       </div>
 
       {/* Middle Footer */}
-      <div className="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-12 font-futura">
+      <div className="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-2 gap-12 font-futura">
 
         {/* Help */}
         <div>
@@ -92,7 +92,7 @@ export default function Footer() {
 
 
         {/* Manufacturer (CENTER) */}
-        <div className="text-center max-w-sm mx-auto">
+        {/* <div className="text-center max-w-sm mx-auto">
           <h4 className="text-xs uppercase tracking-widest text-gray-500 mb-3">
             Manufacturer Details
           </h4>
@@ -103,7 +103,7 @@ export default function Footer() {
             Gurugram, Haryana 122009,India
           </p>
 
-        </div>
+        </div> */}
 
 
         {/* Connect (RIGHT) */}

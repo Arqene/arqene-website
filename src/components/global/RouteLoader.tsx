@@ -552,6 +552,566 @@
 
 
 
+// "use client";
+
+// import { useEffect, useState } from "react";
+// import { usePathname } from "next/navigation";
+// import { AnimatePresence, motion } from "framer-motion";
+// import Image from "next/image";
+
+// const NAVBAR_HEIGHT = 72;
+
+// export default function RouteLoader() {
+//   const pathname = usePathname();
+//   const isHome = pathname === "/";
+
+//   const [visible, setVisible] = useState(isHome);
+//   const [logoPhase, setLogoPhase] = useState<"show" | "hide">("show");
+//   const [collapse, setCollapse] = useState(false);
+
+//   useEffect(() => {
+//     if (!isHome) {
+//       setVisible(false);
+//       return;
+//     }
+
+//     setLogoPhase("show");
+//     setCollapse(false);
+//     setVisible(true);
+
+//     const logoDisplay = setTimeout(() => {
+//       setLogoPhase("hide");
+//     }, 700);
+
+//     const collapseTimer = setTimeout(() => {
+//       setCollapse(true);
+//     }, 2000);
+
+//     const removeTimer = setTimeout(() => {
+//       setVisible(false);
+//     }, 3000);
+
+//     return () => {
+//       clearTimeout(logoDisplay);
+//       clearTimeout(collapseTimer);
+//       clearTimeout(removeTimer);
+//     };
+//   }, [isHome]);
+
+//   if (!isHome) return null;
+
+//   return (
+//     <AnimatePresence>
+//       {visible && (
+//         <motion.div
+//           className="fixed inset-0 z-[110] bg-black/5 backdrop-blur-xl overflow-hidden"
+//           initial={{ height: "100vh" }}
+//           animate={{
+//             height: collapse ? NAVBAR_HEIGHT : "100vh",
+//           }}
+//           transition={{
+//             duration: 1.1,
+//             ease: [0.23, 1, 0.32, 1],
+//           }}
+//         >
+//           {/* CENTERED LOGO */}
+//           <motion.div
+//             className="absolute inset-0 flex items-center justify-center px-6"
+//             initial={{ scale: 1.8, opacity: 1 }}
+//             animate={{
+//               scale: logoPhase === "show" ? 1.2 : 0.5,
+//               opacity: logoPhase === "show" ? 1 : 0,
+//             }}
+//             transition={{
+//               duration: 1.4,
+//               ease: [0.23, 1, 0.32, 1],
+//             }}
+//           >
+//             <div
+//               className="
+//                 relative 
+//                 w-[50vw]
+//                 sm:w-[45vw]
+//                 md:w-[40vw]
+//                 lg:w-[30vw]
+//                 xl:w-[26vw]
+//                 max-w-[420px]
+//                 aspect-[5/2]
+//               "
+//             >
+//               <Image
+//                 src="/Arqene_Logo_White.png"
+//                 alt="Arqene"
+//                 fill
+//                 priority
+//                 sizes="
+//                   (max-width: 640px) 50vw,
+//                   (max-width: 768px) 45vw,
+//                   (max-width: 1024px) 40vw,
+//                   (max-width: 1280px) 30vw,
+//                   420px
+//                 "
+//                 className="object-contain select-none"
+//               />
+//             </div>
+//           </motion.div>
+//         </motion.div>
+//       )}
+//     </AnimatePresence>
+//   );
+// }
+
+
+
+// "use client";
+
+// import { useEffect, useState } from "react";
+// import { usePathname } from "next/navigation";
+// import { AnimatePresence, motion } from "framer-motion";
+// import Image from "next/image";
+
+// const NAVBAR_HEIGHT = 72;
+
+// export default function RouteLoader() {
+//   const pathname = usePathname();
+//   const isHome = pathname === "/";
+
+//   const [visible, setVisible] = useState(isHome);
+//   const [collapse, setCollapse] = useState(false);
+
+//   useEffect(() => {
+//     if (!isHome) {
+//       setVisible(false);
+//       return;
+//     }
+
+//     setCollapse(false);
+//     setVisible(true);
+
+//     // collapse AFTER logo fade completes
+//     const collapseTimer = setTimeout(() => {
+//       setCollapse(true);
+//     }, 2400);
+
+//     // remove loader
+//     const removeTimer = setTimeout(() => {
+//       setVisible(false);
+//     }, 2800);
+
+//     return () => {
+//       clearTimeout(collapseTimer);
+//       clearTimeout(removeTimer);
+//     };
+//   }, [isHome]);
+
+//   if (!isHome) return null;
+
+//   return (
+//     <AnimatePresence>
+//       {visible && (
+//         <motion.div
+//           className="fixed inset-0 z-[110] bg-black/5 backdrop-blur-xl overflow-hidden"
+//           initial={{ height: "100vh" }}
+//           animate={{
+//             height: collapse ? NAVBAR_HEIGHT : "100vh",
+//           }}
+//           transition={{
+//             duration: 1.2,
+//             ease: [0.22, 1, 0.36, 1], // smoother luxury curve
+//           }}
+//         >
+//           {/* LOGO */}
+//           <motion.div
+//             className="absolute inset-0 flex items-center justify-center px-6"
+//             initial={{ scale: 1.6, opacity: 0 }}
+//             animate={{
+//               scale: [1.6, 1.2, 1.0, 0.75], // progressive smooth shrink
+//               opacity: [0, 1, 1, 0],
+//               y: [0, 0, -10, -25], // subtle upward drift
+//             }}
+//             transition={{
+//               duration: 2.2,
+//               ease: [0.22, 1, 0.36, 1],
+//               times: [0, 0.3, 0.7, 1], // controls smooth timing
+//             }}
+//           >
+//             <div
+//               className="
+//                 relative 
+//                 w-[50vw]
+//                 sm:w-[45vw]
+//                 md:w-[40vw]
+//                 lg:w-[30vw]
+//                 xl:w-[26vw]
+//                 max-w-[420px]
+//                 aspect-[5/2]
+//               "
+//             >
+//               <Image
+//                 src="/Arqene_Logo_White.png"
+//                 alt="Arqene"
+//                 fill
+//                 priority
+//                 sizes="
+//                   (max-width: 640px) 50vw,
+//                   (max-width: 768px) 45vw,
+//                   (max-width: 1024px) 40vw,
+//                   (max-width: 1280px) 30vw,
+//                   420px
+//                 "
+//                 className="object-contain select-none"
+//               />
+//             </div>
+//           </motion.div>
+//         </motion.div>
+//       )}
+//     </AnimatePresence>
+//   );
+// }
+
+
+// "use client";
+
+// import { useEffect, useState } from "react";
+// import { usePathname } from "next/navigation";
+// import { AnimatePresence, motion } from "framer-motion";
+// import Image from "next/image";
+
+// const NAVBAR_HEIGHT = 72;
+
+// export default function RouteLoader() {
+//   const pathname = usePathname();
+//   const isHome = pathname === "/";
+
+//   const [visible, setVisible] = useState(isHome);
+//   const [collapse, setCollapse] = useState(false);
+
+//   useEffect(() => {
+//     if (!isHome) {
+//       setVisible(false);
+//       return;
+//     }
+
+//     setCollapse(false);
+//     setVisible(true);
+
+//     // delay collapse slightly more (luxury pacing)
+//     const collapseTimer = setTimeout(() => {
+//       setCollapse(true);
+//     }, 3400);
+
+//     const removeTimer = setTimeout(() => {
+//       setVisible(false);
+//     }, 3600);
+
+//     return () => {
+//       clearTimeout(collapseTimer);
+//       clearTimeout(removeTimer);
+//     };
+//   }, [isHome]);
+
+//   if (!isHome) return null;
+
+//   return (
+//     <AnimatePresence>
+//       {visible && (
+//         <motion.div
+//           className="fixed inset-0 z-[110] bg-black/5 backdrop-blur-xl overflow-hidden"
+//           initial={{ height: "100vh" }}
+//           animate={{
+//             height: collapse ? NAVBAR_HEIGHT : "100vh",
+//           }}
+//           transition={{
+//             duration: 1.3,
+//             ease: [0.22, 1, 0.36, 1],
+//           }}
+//         >
+//           {/* LOGO */}
+//           <motion.div
+//             className="absolute inset-0 flex items-center justify-center px-6"
+//             initial={{ scale: 1.7, opacity: 0 }}
+//             animate={{
+//               scale: [1.7, 1.25, 1.25, 1.0, 0.75], // HOLD at 1.25
+//               opacity: [0, 1, 1, 1, 0],
+//               y: [0, 0, 0, -10, -30],
+//             }}
+//             transition={{
+//               duration: 3.2, // slower = more premium
+//               ease: [0.22, 1, 0.36, 1],
+//               times: [0, 0.25, 0.55, 0.8, 1], // HOLD between 0.25 → 0.55
+//             }}
+//           >
+//             <div
+//               className="
+//                 relative 
+//                 w-[50vw]
+//                 sm:w-[45vw]
+//                 md:w-[40vw]
+//                 lg:w-[30vw]
+//                 xl:w-[26vw]
+//                 max-w-[420px]
+//                 aspect-[5/2]
+//               "
+//             >
+//               <Image
+//                 src="/Arqene_Logo_White.png"
+//                 alt="Arqene"
+//                 fill
+//                 priority
+//                 sizes="
+//                   (max-width: 640px) 50vw,
+//                   (max-width: 768px) 45vw,
+//                   (max-width: 1024px) 40vw,
+//                   (max-width: 1280px) 30vw,
+//                   420px
+//                 "
+//                 className="object-contain select-none"
+//               />
+//             </div>
+//           </motion.div>
+//         </motion.div>
+//       )}
+//     </AnimatePresence>
+//   );
+// }
+
+
+
+
+
+
+// "use client";
+
+// import { useEffect, useState } from "react";
+// import { usePathname } from "next/navigation";
+// import { AnimatePresence, motion } from "framer-motion";
+// import Image from "next/image";
+
+// const NAVBAR_HEIGHT = 72;
+
+// export default function RouteLoader() {
+//   const pathname = usePathname();
+//   const isHome = pathname === "/";
+
+//   const [visible, setVisible] = useState(isHome);
+//   const [collapse, setCollapse] = useState(false);
+
+//   useEffect(() => {
+//     if (!isHome) {
+//       setVisible(false);
+//       return;
+//     }
+
+//     setCollapse(false);
+//     setVisible(true);
+
+//     // slower collapse start (more breathing time)
+//     const collapseTimer = setTimeout(() => {
+//       setCollapse(true);
+//     }, 3600);
+
+//     // remove loader
+//     const removeTimer = setTimeout(() => {
+//       setVisible(false);
+//     }, 4400);
+
+//     return () => {
+//       clearTimeout(collapseTimer);
+//       clearTimeout(removeTimer);
+//     };
+//   }, [isHome]);
+
+//   if (!isHome) return null;
+
+//   return (
+//     <AnimatePresence>
+//       {visible && (
+//         <motion.div
+//           className="fixed inset-0 z-[110] bg-black/5 backdrop-blur-xl overflow-hidden"
+//           initial={{ height: "100vh" }}
+//           animate={{
+//             height: collapse ? NAVBAR_HEIGHT : "100vh",
+//           }}
+//           transition={{
+//             duration: 1.8, // slower collapse
+//             ease: [0.16, 1, 0.3, 1], // heavier luxury easing
+//           }}
+//         >
+//           {/* LOGO */}
+//           <motion.div
+//             className="absolute inset-0 flex items-center justify-center px-6"
+//             initial={{
+//               scale: 1.8,
+//               opacity: 0,
+//               // filter: "blur(8px)",
+//             }}
+//             animate={{
+//               scale: [1.8, 1.3, 1.3, 1.05, 0.75],
+//               opacity: [0, 0.4, 1, 1, 0],
+//               y: [0, 0, 0, -10, -35],
+//               // filter: ["blur(8px)", "blur(2px)", "blur(0px)", "blur(0px)", "blur(6px)"],
+//             }}
+//             transition={{
+//               duration: 3.8, // slower full animation
+//               ease: [0.22, 1, 0.36, 1],
+//               times: [0, 0.2, 0.4, 0.75, 1],
+//             }}
+//           >
+//             <div
+//               className="
+//                 relative 
+//                 w-[50vw]
+//                 sm:w-[45vw]
+//                 md:w-[40vw]
+//                 lg:w-[30vw]
+//                 xl:w-[26vw]
+//                 max-w-[420px]
+//                 aspect-[5/2]
+//               "
+//             >
+//               <Image
+//                 src="/Arqene_Logo_White.png"
+//                 alt="Arqene"
+//                 fill
+//                 priority
+//                 sizes="
+//                   (max-width: 640px) 50vw,
+//                   (max-width: 768px) 45vw,
+//                   (max-width: 1024px) 40vw,
+//                   (max-width: 1280px) 30vw,
+//                   420px
+//                 "
+//                 className="object-contain select-none"
+//               />
+//             </div>
+//           </motion.div>
+//         </motion.div>
+//       )}
+//     </AnimatePresence>
+//   );
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+// "use client";
+
+// import { useEffect, useState } from "react";
+// import { usePathname } from "next/navigation";
+// import { AnimatePresence, motion } from "framer-motion";
+// import Image from "next/image";
+
+// const NAVBAR_HEIGHT = 72;
+
+// export default function RouteLoader() {
+//   const pathname = usePathname();
+//   const isHome = pathname === "/";
+
+//   const [visible, setVisible] = useState(isHome);
+//   const [collapse, setCollapse] = useState(false);
+
+//   useEffect(() => {
+//     if (!isHome) {
+//       setVisible(false);
+//       return;
+//     }
+
+//     setCollapse(false);
+//     setVisible(true);
+
+//     const collapseTimer = setTimeout(() => {
+//       setCollapse(true);
+//     }, 3600);
+
+//     const removeTimer = setTimeout(() => {
+//       setVisible(false);
+//     }, 4400);
+
+//     return () => {
+//       clearTimeout(collapseTimer);
+//       clearTimeout(removeTimer);
+//     };
+//   }, [isHome]);
+
+//   if (!isHome) return null;
+
+//   return (
+//     <AnimatePresence>
+//       {visible && (
+//         <motion.div
+//           className="fixed inset-0 z-[110] bg-black/5 backdrop-blur-xl overflow-hidden"
+//           initial={{ height: "100vh" }}
+//           animate={{
+//             height: collapse ? NAVBAR_HEIGHT : "100vh",
+//           }}
+//           transition={{
+//             duration: 1.8,
+//             ease: [0.16, 1, 0.3, 1],
+//           }}
+//         >
+//           {/* LOGO */}
+//           <motion.div
+//             className="absolute inset-0 flex items-center justify-center px-6"
+//             initial={{
+//               scale: 1.8,
+//               opacity: 0,
+//             }}
+//             animate={{
+//               scale: [1.8, 1.3, 1.3, 1.05, 0.75],
+//               opacity: [0, 0.4, 1, 1, 0],
+//               // ❌ Removed upward movement
+//               y: [0, 0, 0, 0, 0],
+//             }}
+//             transition={{
+//               duration: 3.8,
+//               ease: [0.22, 1, 0.36, 1],
+//               times: [0, 0.2, 0.4, 0.75, 1],
+//             }}
+//           >
+//             <div
+//               className="
+//                 relative 
+//                 w-[50vw]
+//                 sm:w-[45vw]
+//                 md:w-[40vw]
+//                 lg:w-[30vw]
+//                 xl:w-[26vw]
+//                 max-w-[420px]
+//                 aspect-[5/2]
+//               "
+//             >
+//               <Image
+//                 src="/Arqene_Logo_White.png"
+//                 alt="Arqene"
+//                 fill
+//                 priority
+//                 sizes="
+//                   (max-width: 640px) 50vw,
+//                   (max-width: 768px) 45vw,
+//                   (max-width: 1024px) 40vw,
+//                   (max-width: 1280px) 30vw,
+//                   420px
+//                 "
+//                 className="object-contain select-none"
+//               />
+//             </div>
+//           </motion.div>
+//         </motion.div>
+//       )}
+//     </AnimatePresence>
+//   );
+// }
+
+
 "use client";
 
 import { useEffect, useState } from "react";
@@ -566,7 +1126,6 @@ export default function RouteLoader() {
   const isHome = pathname === "/";
 
   const [visible, setVisible] = useState(isHome);
-  const [logoPhase, setLogoPhase] = useState<"show" | "hide">("show");
   const [collapse, setCollapse] = useState(false);
 
   useEffect(() => {
@@ -575,24 +1134,18 @@ export default function RouteLoader() {
       return;
     }
 
-    setLogoPhase("show");
     setCollapse(false);
     setVisible(true);
 
-    const logoDisplay = setTimeout(() => {
-      setLogoPhase("hide");
-    }, 700);
-
     const collapseTimer = setTimeout(() => {
       setCollapse(true);
-    }, 2000);
+    }, 3600);
 
     const removeTimer = setTimeout(() => {
       setVisible(false);
-    }, 3000);
+    }, 4200);
 
     return () => {
-      clearTimeout(logoDisplay);
       clearTimeout(collapseTimer);
       clearTimeout(removeTimer);
     };
@@ -610,21 +1163,27 @@ export default function RouteLoader() {
             height: collapse ? NAVBAR_HEIGHT : "100vh",
           }}
           transition={{
-            duration: 1.1,
-            ease: [0.23, 1, 0.32, 1],
+            duration: 1.8,
+            ease: [0.16, 1, 0.3, 1],
           }}
         >
-          {/* CENTERED LOGO */}
+          {/* LOGO */}
           <motion.div
             className="absolute inset-0 flex items-center justify-center px-6"
-            initial={{ scale: 1.8, opacity: 1 }}
+            initial={{
+              scale: 1.8,
+              opacity: 0,
+            }}
             animate={{
-              scale: logoPhase === "show" ? 1.2 : 0.5,
-              opacity: logoPhase === "show" ? 1 : 0,
+              // ❗ FIXED: no final shrink
+              scale: [1.8, 1.3, 1.3, 1.05, 1.05],
+              opacity: [0, 0.4, 1, 1, 0],
+              y: [0, 0, 0, 0, 0],
             }}
             transition={{
-              duration: 1.4,
-              ease: [0.23, 1, 0.32, 1],
+              duration: 3.8,
+              ease: [0.22, 1, 0.36, 1],
+              times: [0, 0.2, 0.4, 0.75, 1],
             }}
           >
             <div
@@ -660,6 +1219,3 @@ export default function RouteLoader() {
     </AnimatePresence>
   );
 }
-
-
-

@@ -232,7 +232,7 @@ const Brand = () => (
 
 export default function TermsPage() {
   return (
-    <div className="max-w-4xl mx-auto px-6 py-12 space-y-6 text-[16px] leading-[1.9] text-[#5f5a50]">
+    <div className="max-w-4xl mx-auto px-2 py-12 space-y-6 text-[16px] leading-[1.9] text-[#5f5a50]">
       <h1 className="text-3xl font-semibold text-black">Terms & Conditions</h1>
 
       <h2 className="text-xl font-semibold">
